@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AlgoBridge Ai - Services</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#eae7e7",
+                      "on-primary-container": "#8392b7",
+                      "primary-fixed": "#d9e2ff",
+                      "on-secondary-fixed": "#241a00",
+                      "inverse-primary": "#b7c6ee",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#91928e",
+                      "on-secondary-container": "#735a00",
+                      "tertiary-fixed": "#e3e3de",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c6c7c2",
+                      "surface-container-low": "#f6f3f2",
+                      "on-error-container": "#93000a",
+                      "primary": "#041534",
+                      "surface-bright": "#fcf9f8",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-fixed-dim": "#ecc246",
+                      "secondary": "#755b00",
+                      "primary-fixed-dim": "#b7c6ee",
+                      "tertiary": "#151714",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface": "#fcf9f8",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#4f5e81",
+                      "primary-container": "#1b2a4a",
+                      "on-primary-fixed": "#0a1a3a",
+                      "secondary-container": "#fed255",
+                      "tertiary-container": "#292b28",
+                      "on-secondary-fixed-variant": "#584400",
+                      "outline": "#75777f",
+                      "on-background": "#1c1b1b",
+                      "background": "#fcf9f8",
+                      "surface-variant": "#e5e2e1",
+                      "secondary-fixed": "#ffe08e",
+                      "on-surface-variant": "#45464e",
+                      "on-tertiary-fixed": "#1a1c19",
+                      "surface-container-highest": "#e5e2e1",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1c1b1b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed-variant": "#384668",
+                      "inverse-surface": "#313030",
+                      "on-tertiary-fixed-variant": "#454744",
+                      "outline-variant": "#c5c6cf",
+                      "surface-container": "#f0eded"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "stack-md": "32px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "stack-sm": "16px",
+                      "stack-lg": "80px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body class="bg-surface text-on-surface font-body-md pt-44">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" style="height:160px;width:auto;"></a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="index.html">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary dark:text-secondary-fixed border-b-2 border-secondary pb-1 opacity-80 scale-95 transition-all" href="services.html">Services</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="about.html">About</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="contact.html">Contact</a>
+</div>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="hidden md:inline-flex items-center justify-center font-label-md text-label-md uppercase px-6 py-3 hover:opacity-90 transition-opacity text-center no-underline" style="background-color:#C9A227;color:#1B2A4A;border-radius:4px;">Book a Call</a>
+<!-- Mobile Menu Icon (Visual Only) -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Header Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto text-center">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6 max-w-4xl mx-auto">
+                How We Work With You.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Systematic efficiency merged with founder-led warmth. Choose the engagement model that aligns with your growth trajectory.
+            </p>
+</section>
+<!-- Pricing Cards Section (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Card 1: The Operator Audit -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-8 flex flex-col shadow-[0_4px_20px_rgba(26,26,26,0.02)]">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">The Operator Audit</h3>
+<div class="border-b border-outline-variant/50 mb-6 w-full"></div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2-week comprehensive process</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Full systems &amp; workflow audit</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Actionable ROI roadmap delivered</span>
+</li>
+</ul>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="w-full bg-transparent border border-primary-container text-primary-container font-label-md text-label-md uppercase tracking-wider px-6 py-4 rounded hover:bg-surface-variant transition-colors mt-auto inline-flex items-center justify-center text-center no-underline">
+                        Book a Call
+                    </a>
+</div>
+<!-- Card 2: The AI OS Build (Most Popular) -->
+<div class="bg-surface-container-lowest border-2 border-secondary-fixed-dim rounded-lg p-8 flex flex-col shadow-[0_4px_20px_rgba(26,26,26,0.06)] relative md:-mt-4 md:mb-[-16px] z-10">
+<div class="absolute top-0 right-8 -translate-y-1/2 bg-secondary-fixed-dim text-primary-container font-label-md text-label-md uppercase tracking-wider px-4 py-1 rounded">
+                        Most Popular
+                    </div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2 mt-2">The AI Operating System Build</h3>
+<div class="border-b border-outline-variant/50 mb-6 w-full"></div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">4-8 week intensive build cycle</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Custom AI CX agent (Shopify/Gorgias)</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Unified operational dashboard</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Team onboarding &amp; documentation</span>
+</li>
+</ul>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="w-full bg-secondary-fixed-dim text-primary-container font-label-md text-label-md uppercase tracking-wider px-6 py-4 rounded hover:opacity-90 transition-opacity mt-auto shadow-[0_4px_20px_rgba(26,26,26,0.04)] inline-flex items-center justify-center text-center no-underline">
+                        Book a Call
+                    </a>
+</div>
+<!-- Card 3: Growth Partner Retainer -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-8 flex flex-col shadow-[0_4px_20px_rgba(26,26,26,0.02)]">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Growth Partner Retainer</h3>
+<div class="border-b border-outline-variant/50 mb-6 w-full"></div>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Continuous system monitoring</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Iterative workflow optimization</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-secondary-fixed-dim mr-3 text-sm">check</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Detailed monthly ROI reporting</span>
+</li>
+</ul>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="w-full bg-transparent border border-primary-container text-primary-container font-label-md text-label-md uppercase tracking-wider px-6 py-4 rounded hover:bg-surface-variant transition-colors mt-auto inline-flex items-center justify-center text-center no-underline">
+                        Book a Call
+                    </a>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md text-center">Frequently Asked Questions</h2>
+<div class="space-y-2 faq-container">
+<!-- FAQ Item 1 -->
+<div class="border-b border-outline-variant/50 pb-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none faq-toggle">
+<span class="font-headline-md text-headline-md text-on-surface">Should I start with an Audit or a Build?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden overflow-hidden transition-all duration-300 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            If you have clear bottlenecks and know exactly what needs automating, the Build is often the right path. If your operations feel chaotic and you need strategic clarity on where AI can deliver the highest ROI, we recommend starting with the Operator Audit.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-outline-variant/50 pb-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none faq-toggle">
+<span class="font-headline-md text-headline-md text-on-surface">What tools do you integrate with?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden overflow-hidden transition-all duration-300 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            We specialize in modern e-commerce and operational stacks. Our core integrations include Shopify, Gorgias, Klaviyo, Zapier, Make, and custom API connections for legacy systems.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-outline-variant/50 pb-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none faq-toggle">
+<span class="font-headline-md text-headline-md text-on-surface">How quickly will I see a return on investment?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden overflow-hidden transition-all duration-300 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            For CX automation, clients typically see ticket resolution times drop by 40% within the first two weeks post-launch, directly impacting support costs and customer retention. Broader operational builds usually demonstrate clear ROI within 90 days.
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border-b border-outline-variant/50 pb-4">
+<button class="w-full flex justify-between items-center text-left py-2 focus:outline-none faq-toggle">
+<span class="font-headline-md text-headline-md text-on-surface">Are you a global agency?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden overflow-hidden transition-all duration-300 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Yes. While our core team is distributed across North America and Europe, we partner with visionary founders worldwide to modernize their operations.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Band -->
+<section class="relative bg-primary-container py-stack-lg px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay" data-alt="A highly abstract, macro photograph of polished brass intersecting with deep navy blue matte surfaces. The lighting is dramatic and directional, creating sharp contrast and a premium, architectural lookbook aesthetic. The composition feels solid, corporate yet artistic, embodying a 'Modern Editorial' style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAj1G-qPWXgxSRI3nTOzYza6x3KgUtxIUjwgfPtUkeMD-QagYhv22ziL_48HKpEp7ALQ5lh_e7QuhmMdJQGcZFh8WGcVpYB_53vTJQNmNqeD9xn5ClUyus7Jpfc5YvCR8ySNpaxDjPtDQbWHfoX9ji15FE1MXcY9uy6Y4ICesdSYYzvqFviC2CQYe8zjZbOzT_HbUv-wsgdyaHWjKT_rdf7zw7JdlJLWJ9gR6vgqFYcSrMfLS3WzWgny7gpuNGkHwRO-Gpperwc2tE')"></div>
+<div class="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">Ready to redefine your operations?</h2>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="bg-secondary-fixed-dim text-primary-container font-label-md text-label-md uppercase tracking-wider px-8 py-4 rounded shadow-[0_4px_20px_rgba(26,26,26,0.1)] hover:opacity-90 transition-opacity inline-flex items-center justify-center text-center no-underline">
+                    Book a Call
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface-container-highest border-t border-outline-variant/20 flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto gap-8">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                AlgoBridge Ai
+            </div>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant">
+                © 2024 AlgoBridge Ai. All rights reserved. Powered by Sri Saamba.
+            </div>
+<div class="flex space-x-6">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:underline transition-all" href="https://www.linkedin.com/company/algobridgeai/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+</footer>
+<!-- Simple FAQ Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.faq-toggle');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.material-symbols-outlined');
+                    
+                    // Close all others
+                    document.querySelectorAll('.faq-content').forEach(c => {
+                        if (c !== content && !c.classList.contains('hidden')) {
+                            c.classList.add('hidden');
+                            c.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current
+                    content.classList.toggle('hidden');
+                    if (content.classList.contains('hidden')) {
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+(function(){
+  var CAL='https://calendly.com/business-srisaamba/30min';
+  var links=[['Home','index.html'],['Services','services.html'],['About','about.html'],['Case Studies','case-studies.html'],['Contact','contact.html']];
+  var btn=[].slice.call(document.querySelectorAll('button')).filter(function(b){
+    var s=b.querySelector('.material-symbols-outlined'); return s && s.textContent.trim()==='menu';
+  })[0];
+  if(!btn) return;
+  var m=document.createElement('div');
+  m.id='ledger-mobile-menu';
+  m.style.cssText='display:none;position:fixed;top:64px;left:0;right:0;background:#fcf9f8;border-bottom:1px solid #e4e1da;z-index:60;padding:8px 20px 16px;box-shadow:0 8px 24px rgba(26,26,26,.06);';
+  m.innerHTML=links.map(function(l){return '<a href="'+l[1]+'" style="display:block;padding:13px 0;border-bottom:1px solid #eee;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;text-decoration:none;">'+l[0]+'</a>';}).join('')
+    +'<a href="#" onclick="Calendly.initPopupWidget({url:CAL});document.getElementById(\'ledger-mobile-menu\').style.display=\'none\';return false;" style="display:block;margin-top:14px;text-align:center;background:#C9A227;color:#1B2A4A;padding:13px;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;">Book a Call</a>';
+  document.body.appendChild(m);
+  btn.addEventListener('click',function(){ m.style.display = (m.style.display==='none'?'block':'none'); });
+})();
+</script>
+</body></html>
