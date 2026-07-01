@@ -193,6 +193,8 @@
 <input type="hidden" name="subject" value="New Lead — AlgoBridge Ai"/>
 <input type="hidden" name="from_name" value="AlgoBridge Ai Website"/>
 <input type="hidden" name="redirect" value="false"/>
+<!-- Honeypot: bots that tick this hidden box get their submission rejected by Web3Forms -->
+<input type="checkbox" name="botcheck" class="hidden" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Name -->
 <div class="flex flex-col gap-2">
