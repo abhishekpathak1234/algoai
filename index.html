@@ -3,9 +3,16 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>AlgoBridge Ai - AI Systems for Commerce Brands</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+<style>
+@font-face { font-family:'Geist'; font-weight:400; font-style:normal; font-display:swap; src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Regular.woff2') format('woff2'); }
+@font-face { font-family:'Geist'; font-weight:500; font-style:normal; font-display:swap; src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2'); }
+@font-face { font-family:'Geist'; font-weight:600; font-style:normal; font-display:swap; src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-SemiBold.woff2') format('woff2'); }
+@font-face { font-family:'Geist'; font-weight:700; font-style:normal; font-display:swap; src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Bold.woff2') format('woff2'); }
+@font-face { font-family:'Geist'; font-weight:800; font-style:normal; font-display:swap; src:url('https://cdn.jsdelivr.net/npm/geist@1/dist/fonts/geist-sans/Geist-Black.woff2') format('woff2'); }
+</style>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -80,24 +87,24 @@
                         "stack-lg": "80px"
                     },
                     "fontFamily": {
-                        "body-md": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "label-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "display-lg": ["Inter"],
-                        "display-lg-mobile": ["Inter"],
-                        "caption": ["Inter"],
-                        "headline-md": ["Inter"]
+                        "body-md": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "headline-lg": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "label-md": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "body-lg": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "display-lg": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "display-lg-mobile": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "caption": ["Geist", "Inter", "system-ui", "sans-serif"],
+                        "headline-md": ["Geist", "Inter", "system-ui", "sans-serif"]
                     },
                     "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                        "body-md": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-lg": ["52px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["15px", {"lineHeight": "1.3", "letterSpacing": "0.04em", "fontWeight": "600"}],
+                        "body-lg": ["22px", {"lineHeight": "1.55", "fontWeight": "500"}],
+                        "display-lg": ["50px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-lg-mobile": ["46px", {"lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "caption": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
                     }
                 }
             }
@@ -107,69 +114,246 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Geist','Inter',system-ui,sans-serif; }
+        .hero-highlight { position: relative; display: inline-block; z-index: 1; }
+        .hero-highlight::before {
+            content: ''; position: absolute; left: -4px; right: -4px; bottom: 0.06em; height: 0.42em;
+            background: rgba(201,162,39,0.28); border-radius: 4px; z-index: -1;
+        }
+        .nav-link { position: relative; padding-bottom: 4px; }
+        .nav-link::after {
+            content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+            background: #755b00; transition: width 0.25s cubic-bezier(.16,1,.3,1);
+        }
+        .nav-link:hover::after, .nav-link.nav-link-active::after { width: 100%; }
+        .stat-serif { font-family: 'Playfair Display', 'Georgia', serif; }
+
+        /* Premium button system */
+        .btn-premium {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            height: 58px; padding: 0 32px; border-radius: 16px;
+            font-family: 'Geist','Inter',sans-serif; font-size: 16px; font-weight: 600;
+            letter-spacing: 0; text-decoration: none; white-space: nowrap;
+            transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s cubic-bezier(.16,1,.3,1), background-color 0.25s ease;
+            will-change: transform;
+        }
+        .btn-premium-primary {
+            background: linear-gradient(180deg,#D4AF37,#C9A227);
+            color: #1B2A4A;
+            box-shadow: 0 1px 2px rgba(27,42,74,0.08), 0 8px 20px -6px rgba(201,162,39,0.45);
+        }
+        .btn-premium-primary:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(27,42,74,0.1), 0 16px 32px -8px rgba(201,162,39,0.55); }
+        .btn-premium-primary .btn-arrow { transition: transform 0.3s cubic-bezier(.16,1,.3,1); }
+        .btn-premium-primary:hover .btn-arrow { transform: translateX(4px); }
+        .btn-premium-secondary {
+            background: #ffffff; color: #1B2A4A; border: 1.5px solid rgba(27,42,74,0.25);
+            box-shadow: 0 1px 2px rgba(27,42,74,0.04), 0 6px 16px -8px rgba(27,42,74,0.08);
+        }
+        .btn-premium-secondary:hover { transform: translateY(-2px); border-color: rgba(27,42,74,0.45); box-shadow: 0 2px 4px rgba(27,42,74,0.06), 0 12px 24px -8px rgba(27,42,74,0.14); }
+        .btn-premium-navy {
+            background: linear-gradient(180deg,#22345C,#1B2A4A);
+            color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.15), 0 8px 20px -6px rgba(0,0,0,0.35);
+        }
+        .btn-premium-navy:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 16px 32px -8px rgba(0,0,0,0.4); }
+
+        /* Premium card system */
+        .card-premium {
+            border-radius: 24px;
+            background: rgba(255,255,255,0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(27,42,74,0.08);
+            box-shadow: 0 2px 8px -2px rgba(27,42,74,0.06), 0 16px 32px -16px rgba(27,42,74,0.12);
+            transition: transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s cubic-bezier(.16,1,.3,1), border-color 0.3s ease;
+        }
+        .card-premium:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 4px 12px -2px rgba(27,42,74,0.08), 0 28px 48px -16px rgba(27,42,74,0.18); border-color: rgba(201,162,39,0.3); }
+
+        /* Ambient background */
+        .bg-ambient { position: relative; }
+        .bg-ambient::before {
+            content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+            background-image: radial-gradient(circle, rgba(27,42,74,0.05) 1px, transparent 1px);
+            background-size: 28px 28px;
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+        }
+        .bg-ambient-glow::after {
+            content: ''; position: absolute; top: -10%; right: -10%; width: 50%; height: 60%; pointer-events: none; z-index: 0;
+            background: radial-gradient(circle, rgba(201,162,39,0.10), transparent 70%);
+            filter: blur(60px);
+        }
+        .bg-ambient > * { position: relative; z-index: 1; }
+
+        /* Hero dashboard image */
+        .hero-shot-frame {
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 2px 8px rgba(27,42,74,0.06), 0 30px 60px -20px rgba(27,42,74,0.35), 0 0 0 1px rgba(27,42,74,0.04);
+            animation: heroFloat 6s ease-in-out infinite;
+            transition: transform 0.4s cubic-bezier(.16,1,.3,1);
+        }
+        @keyframes heroFloat { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-shot-frame { animation: none; }
+        }
     </style>
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
-<body class="bg-[#F5F5F0] text-primary font-body-md antialiased pt-44">
+<body class="bg-[#F5F5F0] text-primary font-body-md antialiased pt-28">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" style="height:160px;width:auto;"></a>
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-1 max-w-container-max mx-auto">
+<a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" style="height:77px;width:auto;"></a>
 <div class="hidden md:flex gap-8">
-<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md uppercase tracking-wider hover:opacity-80 transition-all" href="index.html">Home</a>
-<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="services.html">Services</a>
-<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="about.html">About</a>
-<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-200" href="case-studies.html">Case Studies</a>
-<a class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
+<a class="nav-link nav-link-active text-secondary font-label-md text-label-md uppercase tracking-wider transition-all" href="index.html">Home</a>
+<a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="services.html">Services</a>
+<a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="about.html">About</a>
+<a class="nav-link font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-200" href="case-studies.html">Case Studies</a>
+<a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="contact.html">Contact</a>
 </div>
-<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="hidden md:inline-flex items-center justify-center font-label-md text-label-md uppercase px-6 py-3 hover:opacity-90 transition-opacity text-center no-underline" style="background-color:#C9A227;color:#1B2A4A;border-radius:4px;">Book a Call</a>
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="btn-premium btn-premium-primary hidden md:inline-flex" style="height:44px;padding:0 24px;">Book a Call</a>
 <button class="md:hidden text-primary">
 <span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
 </button>
 </div>
 </nav>
 <!-- Hero Section -->
-<header class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-stack-lg">
+<header class="bg-ambient bg-ambient-glow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-12 overflow-hidden">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-6 space-y-8">
+<div class="lg:col-span-6 space-y-6">
+<span class="inline-flex items-center gap-2 bg-custom-brass/10 border border-custom-brass/30 text-custom-navy font-label-md text-caption uppercase tracking-wider px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-custom-brass">bolt</span>
+                    AI Growth Infrastructure for D2C Brands
+                </span>
 <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary text-balance">
-                    AI Systems for Commerce Brands, Built by an Operator Who's Run Them.
+                    AI Growth Infrastructure <span class="text-custom-brass hero-highlight">for D2C Brands</span>
                 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl text-balance">
-                    Ex-Amazon. 2X founder. I built the AI support, retention, and ops systems I wish I'd had — for brands doing $2M–$30M a year.
+                    Recover more revenue. Reduce support costs. Scale without adding headcount.
                 </p>
-<div class="flex flex-col sm:flex-row gap-4 pt-4">
-<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="bg-custom-brass text-custom-navy font-label-md text-label-md uppercase px-8 py-4 rounded hover:-translate-y-0.5 transition-transform shadow-[0_4px_20px_rgba(26,26,26,0.04)] inline-flex items-center justify-center text-center no-underline">
-                        Book a Free Audit Call
+<div class="flex flex-col sm:flex-row gap-4 pt-2">
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="btn-premium btn-premium-primary no-underline">
+                        Get Your Free Revenue Leak Audit
+                        <span class="material-symbols-outlined btn-arrow text-[20px]">arrow_forward</span>
                     </a>
-<a href="services.html" class="bg-transparent border border-custom-navy text-custom-navy font-label-md text-label-md uppercase px-8 py-4 rounded hover:bg-custom-navy hover:text-white transition-colors inline-flex items-center justify-center text-center no-underline">
-                        See What We Build
+<a href="#how-it-works" class="btn-premium btn-premium-secondary no-underline">
+                        See How It Works
                     </a>
+</div>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-4">
+<span class="inline-flex items-center gap-2 text-on-surface-variant font-label-md text-caption uppercase tracking-wide"><span class="material-symbols-outlined text-[18px] text-custom-brass">storefront</span>Built for Shopify Brands</span>
+<span class="inline-flex items-center gap-2 text-on-surface-variant font-label-md text-caption uppercase tracking-wide"><span class="material-symbols-outlined text-[18px] text-custom-brass">groups</span>Trusted by Growth Teams</span>
+<span class="inline-flex items-center gap-2 text-on-surface-variant font-label-md text-caption uppercase tracking-wide"><span class="material-symbols-outlined text-[18px] text-custom-brass">auto_awesome</span>AI-Powered</span>
+<span class="inline-flex items-center gap-2 text-on-surface-variant font-label-md text-caption uppercase tracking-wide"><span class="material-symbols-outlined text-[18px] text-custom-brass">trending_up</span>ROI Focused</span>
 </div>
 </div>
 <div class="lg:col-span-6 mt-stack-md lg:mt-0">
-<div class="relative rounded-lg overflow-hidden border border-outline-variant/30 shadow-[0_4px_20px_rgba(26,26,26,0.04)] bg-surface aspect-[16/9]">
+<div class="hero-shot-frame relative rounded-[20px] overflow-hidden bg-surface aspect-[16/9]">
 <img alt="AlgoBridge Ai automation dashboard — agent console, support flow and live ops metrics" class="w-full h-full object-cover object-center" src="images/hero.png">
 </div>
 </div>
 </div>
 </header>
+
+<!-- Revenue Leak Cards (standalone, premium redesign) -->
+<style>
+.leak2-wrap { opacity:0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.leak2-wrap.leak2-visible { opacity:1; transform: translateY(0); }
+.leak2-card {
+  background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, rgba(201,162,39,0.45), rgba(27,42,74,0.22)) border-box;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px -10px rgba(27,42,74,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  height: 100%;
+}
+.leak2-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(27,42,74,0.2); }
+.leak2-badge { position:absolute; top:-10px; left:24px; width:28px; height:28px; border-radius:9999px; background:#1B2A4A; color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(27,42,74,0.3); }
+.leak2-icon { transition: transform 0.3s ease; }
+.leak2-card:hover .leak2-icon { transform: scale(1.08) rotate(-3deg); }
+</style>
+<section class="pt-16 pb-32 md:pt-20 md:pb-40 bg-[#F5F5F0]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 max-w-[750px] mx-auto">
+<span class="inline-flex items-center gap-2 bg-custom-brass/10 border border-custom-brass/30 text-custom-navy font-label-md text-caption uppercase tracking-wider px-4 py-2 rounded-full mb-5">
+<span class="material-symbols-outlined text-[16px] text-custom-brass">warning</span>Revenue Leaks
+</span>
+<h2 class="font-headline-lg text-headline-lg text-primary text-balance">Every Dollar You Spend on Ads Is <span class="text-custom-brass hero-highlight">Leaking Revenue</span> Here</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Growing D2C brands don't lose because of bad products. They lose through hundreds of small operational leaks that compound every day.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="leak2-wrap">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">01</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-navy/8 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-navy">shopping_cart</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">High Cart Abandonment</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Shoppers leave before checkout and never return.</p>
+</div>
+</div>
+<div class="leak2-wrap" style="transition-delay:60ms;">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">02</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-brass/12 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-brass">monitoring</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">Rising Acquisition Costs</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Ad costs keep rising while profitability shrinks.</p>
+</div>
+</div>
+<div class="leak2-wrap" style="transition-delay:120ms;">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">03</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-navy/8 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-navy">support_agent</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">Expensive Support</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Scaling a support team is costly and hard to manage.</p>
+</div>
+</div>
+<div class="leak2-wrap" style="transition-delay:180ms;">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">04</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-brass/12 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-brass">schedule</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">No 24/7 Engagement</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Customers shop around the clock. Your team doesn't.</p>
+</div>
+</div>
+<div class="leak2-wrap" style="transition-delay:240ms;">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">05</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-navy/8 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-navy">autorenew</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">Low Lifetime Value</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Too many customers buy once and disappear.</p>
+</div>
+</div>
+<div class="leak2-wrap" style="transition-delay:300ms;">
+<div class="leak2-card p-8 flex flex-col">
+<span class="leak2-badge">06</span>
+<span class="leak2-icon w-16 h-16 rounded-2xl bg-custom-brass/12 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-3xl text-custom-brass">hub</span></span>
+<h3 class="font-headline-md text-primary mb-2" style="font-size:19px;font-weight:700;">Disconnected Stack</h3>
+<p class="text-on-surface-variant" style="font-size:15px;">Shopify. Klaviyo. Meta. Nothing talks to each other.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <!-- Results Strip -->
-<section class="bg-custom-navy py-stack-md">
+<section class="py-24" style="background:linear-gradient(160deg,#22345C,#0F1B33);">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
 <div class="text-center py-8 md:py-0">
-<div class="font-display-lg-mobile text-display-lg-mobile text-custom-brass">42%</div>
-<div class="font-body-md text-body-md text-primary-fixed-dim mt-2">Avg. drop in support tickets</div>
+<div class="stat-serif text-custom-brass" style="font-size:64px;">42%</div>
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim mt-3">Avg. Ticket Reduction</div>
 </div>
 <div class="text-center py-8 md:py-0">
-<div class="font-display-lg-mobile text-display-lg-mobile text-custom-brass">$180k</div>
-<div class="font-body-md text-body-md text-primary-fixed-dim mt-2">Revenue recovered per year</div>
+<div class="stat-serif text-custom-brass" style="font-size:64px;">$180k</div>
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim mt-3">Revenue Recovered / Mo</div>
 </div>
 <div class="text-center py-8 md:py-0">
-<div class="font-display-lg-mobile text-display-lg-mobile text-custom-brass">6 wks</div>
-<div class="font-body-md text-body-md text-primary-fixed-dim mt-2">Avg. time to a live system</div>
+<div class="stat-serif text-custom-brass" style="font-size:64px;">6 wks</div>
+<div class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed-dim mt-3">Typical Time to Live</div>
 </div>
 </div>
 </div>
@@ -188,7 +372,7 @@
 .brand-float-5 { animation: floatUp 3.2s ease-in-out infinite 2.6s; }
 .brand-float-6 { animation: floatUp 3.2s ease-in-out infinite 0.3s; }
 </style>
-<section class="py-stack-md border-b border-outline-variant/20">
+<section class="py-stack-md bg-white">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <p class="text-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-10">Brands we've built for</p>
 <div class="flex flex-nowrap items-center justify-center gap-4 sm:gap-8 md:gap-12 overflow-x-auto">
@@ -202,48 +386,184 @@
 </div>
 </section>
 
-<!-- "The Problem" Band -->
-<section class="bg-surface py-stack-lg border-y border-outline-variant/20">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Leak-Closing Section (Transformation Cards) -->
+<style>
+.tcard-wrap { opacity:0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.tcard-wrap.tcard-visible { opacity:1; transform: translateY(0); }
+.tcard-problem, .tcard-solution {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(27,42,74,0.08);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px -12px rgba(27,42,74,0.10);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.tcard-row:hover .tcard-problem { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(27,42,74,0.18); border-color: rgba(201,162,39,0.4); }
+.tcard-row:hover .tcard-solution { transform: translateX(4px); box-shadow: 0 20px 40px -12px rgba(27,42,74,0.14); border-color: rgba(27,42,74,0.16); }
+.tcard-icon-sq { transition: transform 0.35s ease; }
+.tcard-row:hover .tcard-icon-sq { transform: rotate(4deg) scale(1.06); }
+.tcard-connector-circle { transition: box-shadow 0.35s ease, transform 0.35s ease; animation: tcardPulse 3s ease-in-out infinite; }
+@keyframes tcardPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(201,162,39,0.28); } 50% { box-shadow: 0 0 0 10px rgba(201,162,39,0); } }
+.tcard-row:hover .tcard-connector-circle { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(201,162,39,0.2); }
+.tcard-connector-arrow { transition: transform 0.3s ease; }
+.tcard-row:hover .tcard-connector-arrow { transform: translateX(3px); }
+.tcard-connector-line { height:2px; background: repeating-linear-gradient(to right, rgba(201,162,39,0.4) 0, rgba(201,162,39,0.4) 4px, transparent 4px, transparent 10px); }
+@media (max-width: 767px) {
+  .tcard-connector-line { display:none; }
+}
+</style>
+<section class="relative overflow-hidden bg-[#F5F5F0] py-stack-lg">
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-[0.06]" style="background: radial-gradient(circle, #1B2A4A, transparent 70%); filter: blur(60px);"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-[0.08]" style="background: radial-gradient(circle, #C9A227, transparent 70%); filter: blur(60px);"></div>
+<div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle, rgba(27,42,74,0.08) 1px, transparent 1px); background-size: 26px 26px;"></div>
+</div>
+<div class="relative max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-stack-md">
-<h2 class="font-headline-lg text-headline-lg text-primary">The Bottlenecks of Scale</h2>
+<span class="inline-flex items-center gap-2 bg-custom-brass/10 border border-custom-brass/30 text-custom-navy font-label-md text-caption uppercase tracking-wider px-4 py-2 rounded-full mb-5">
+<span class="material-symbols-outlined text-[16px] text-custom-brass">auto_awesome</span>How It Works
+</span>
+<h2 class="font-headline-lg text-headline-lg text-primary text-balance">Here's How <span class="text-custom-brass hero-highlight">AlgoBridge</span> Closes Those Revenue Leaks</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-4">Turn every revenue leak into a growth opportunity using intelligent AI workflows built for modern Shopify brands.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="bg-surface p-8 rounded-lg border border-outline-variant/30 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.02)] hover:shadow-[0_4px_20px_rgba(26,26,26,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-container">
-<span class="material-symbols-outlined text-2xl" data-icon="support_agent">support_agent</span>
+<div class="max-w-4xl mx-auto space-y-5">
+
+<div class="tcard-wrap tcard-row">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-navy/8 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-navy">shopping_cart</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">High Cart Abandonment</h3><p class="text-on-surface-variant" style="font-size:15px;">Shoppers leave before checkout and never return.</p></div>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary">Manual Support Overload</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Your CX team is drowning in 'where is my order' tickets instead of driving high-value consultative sales.</p>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
 </div>
-<!-- Card 2 -->
-<div class="bg-surface p-8 rounded-lg border border-outline-variant/30 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.02)] hover:shadow-[0_4px_20px_rgba(26,26,26,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-container">
-<span class="material-symbols-outlined text-2xl" data-icon="water_drop">water_drop</span>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#C9A227;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">Recover abandoned carts with automated journeys across email and WhatsApp.</p>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary">Leaky Retention Flows</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Generic post-purchase flows are missing opportunities to build loyalty and increase LTV automatically.</p>
 </div>
-<!-- Card 3 -->
-<div class="bg-surface p-8 rounded-lg border border-outline-variant/30 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.02)] hover:shadow-[0_4px_20px_rgba(26,26,26,0.06)] transition-shadow">
-<div class="w-12 h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-container">
-<span class="material-symbols-outlined text-2xl" data-icon="dashboard_customize">dashboard_customize</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary">Disconnected Dashboards</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Data is siloed across Shopify, Amazon, Meta, and Klaviyo, making holistic decision-making slow.</p>
+
+<div class="tcard-wrap tcard-row" style="transition-delay:80ms;">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-brass/12 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-brass">trending_up</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">Rising Acquisition Costs</h3><p class="text-on-surface-variant" style="font-size:15px;">Ad costs keep rising while profitability shrinks.</p></div>
 </div>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
+</div>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#1B2A4A;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">Increase LTV with retention automation and post-purchase engagement.</p>
+</div>
+</div>
+</div>
+
+<div class="tcard-wrap tcard-row" style="transition-delay:160ms;">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-navy/8 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-navy">support_agent</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">Expensive Support</h3><p class="text-on-surface-variant" style="font-size:15px;">Scaling a support team is costly and hard to manage.</p></div>
+</div>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
+</div>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#C9A227;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">AI-first support that deflects repetitive queries and escalates to your team.</p>
+</div>
+</div>
+</div>
+
+<div class="tcard-wrap tcard-row" style="transition-delay:240ms;">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-brass/12 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-brass">schedule</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">No 24/7 Engagement</h3><p class="text-on-surface-variant" style="font-size:15px;">Customers shop around the clock. Your team doesn't.</p></div>
+</div>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
+</div>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#1B2A4A;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">Always-on AI conversations that support and engage customers, any time.</p>
+</div>
+</div>
+</div>
+
+<div class="tcard-wrap tcard-row" style="transition-delay:320ms;">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-navy/8 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-navy">favorite</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">Low Lifetime Value</h3><p class="text-on-surface-variant" style="font-size:15px;">Too many customers buy once and disappear.</p></div>
+</div>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
+</div>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#C9A227;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">Personalized win-back, replenishment and loyalty campaigns.</p>
+</div>
+</div>
+</div>
+
+<div class="tcard-wrap tcard-row" style="transition-delay:400ms;">
+<div class="grid grid-cols-1 md:grid-cols-[1fr_64px_1fr] items-center gap-4 md:gap-0">
+<div class="tcard-problem p-6 flex items-start gap-4">
+<span class="tcard-icon-sq w-14 h-14 rounded-2xl bg-custom-brass/12 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-2xl text-custom-brass">hub</span></span>
+<div><h3 class="font-headline-md text-primary mb-1" style="font-size:19px;font-weight:700;">Disconnected Stack</h3><p class="text-on-surface-variant" style="font-size:15px;">Too many tools. Nothing works together.</p></div>
+</div>
+<div class="hidden md:flex items-center justify-center relative">
+<span class="tcard-connector-line flex-1"></span>
+<span class="tcard-connector-circle w-11 h-11 rounded-full bg-white border border-custom-brass/40 flex items-center justify-center flex-shrink-0 mx-1 shadow-sm"><span class="material-symbols-outlined tcard-connector-arrow text-custom-brass text-xl">arrow_forward</span></span>
+<span class="tcard-connector-line flex-1"></span>
+</div>
+<div class="tcard-solution p-6 border-l-4 flex items-start gap-3" style="border-left-color:#1B2A4A;">
+<span class="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0 mt-0.5"><span class="material-symbols-outlined text-[15px]" style="color:#22C55E;">check</span></span>
+<p class="text-custom-navy" style="font-size:17px;font-weight:600;">One connected system across Shopify, Klaviyo, Gorgias and Meta Ads.</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Built Around Your Existing Stack -->
+<section class="py-stack-md bg-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<p class="text-center font-label-md text-label-md uppercase tracking-wider text-on-surface-variant mb-10">Built Around Your Existing Stack</p>
+<div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+<img src="images/logos/shopify.svg" alt="Shopify" class="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity">
+<span class="font-headline-md text-headline-md text-on-surface-variant opacity-60 hover:opacity-100 hover:text-custom-navy transition-all" style="font-size:19px;">Klaviyo</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant opacity-60 hover:opacity-100 hover:text-custom-navy transition-all" style="font-size:19px;">Gorgias</span>
+<img src="images/logos/meta.svg" alt="Meta Ads" class="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity">
+<img src="images/logos/google-analytics.svg" alt="Google Analytics" class="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity">
+<img src="images/logos/whatsapp.svg" alt="WhatsApp" class="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md text-on-surface-variant/60">and more…</span>
 </div>
 </div>
 </section>
 <!-- How It Works -->
-<section class="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<section id="how-it-works" class="py-stack-lg bg-[#F5F5F0]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-stack-md">
 <p class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-3">The Process</p>
 <h2 class="font-headline-lg text-headline-lg text-primary">How It Works</h2>
 </div>
 <div class="flex flex-col md:flex-row justify-between items-start gap-gutter relative">
-<div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-outline-variant/30 -z-10"></div>
 <div class="flex-1 flex flex-col items-center text-center gap-4 relative w-full">
 <div class="w-24 h-24 rounded-full bg-surface border border-outline-variant flex items-center justify-center text-primary shadow-[0_4px_20px_rgba(26,26,26,0.04)] mb-2">
 <span class="font-headline-md text-headline-md">01</span>
@@ -251,86 +571,92 @@
 <h3 class="font-label-md text-label-md uppercase tracking-wider text-custom-navy">Audit</h3>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Free 30-min call. We map your ops stack and pinpoint the highest-leverage bottleneck to fix first.</p>
 </div>
+<span class="hidden md:flex items-center flex-1 flex-shrink" style="margin-top:42px; max-width:80px;"><span class="flex-1 h-[2px]" style="background:linear-gradient(90deg, rgba(201,162,39,0.5), rgba(201,162,39,0.9));"></span><span class="material-symbols-outlined text-custom-brass text-2xl" style="margin-left:-2px;">arrow_forward</span></span>
 <div class="flex-1 flex flex-col items-center text-center gap-4 relative w-full mt-8 md:mt-0">
-<div class="w-24 h-24 rounded-full bg-custom-brass border border-custom-brass flex items-center justify-center text-custom-navy shadow-[0_4px_20px_rgba(26,26,26,0.04)] mb-2">
+<div class="w-24 h-24 rounded-full bg-custom-navy border border-custom-navy flex items-center justify-center text-white shadow-[0_4px_20px_rgba(26,26,26,0.04)] mb-2">
 <span class="font-headline-md text-headline-md">02</span>
 </div>
 <h3 class="font-label-md text-label-md uppercase tracking-wider text-custom-navy">Build</h3>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">4–8 weeks. We design and deploy custom AI agents wired into your existing tools — Shopify, Gorgias, Klaviyo, and more.</p>
 </div>
+<span class="hidden md:flex items-center flex-1 flex-shrink" style="margin-top:42px; max-width:80px;"><span class="flex-1 h-[2px]" style="background:linear-gradient(90deg, rgba(201,162,39,0.5), rgba(201,162,39,0.9));"></span><span class="material-symbols-outlined text-custom-brass text-2xl" style="margin-left:-2px;">arrow_forward</span></span>
 <div class="flex-1 flex flex-col items-center text-center gap-4 relative w-full mt-8 md:mt-0">
-<div class="w-24 h-24 rounded-full bg-surface border border-outline-variant flex items-center justify-center text-primary shadow-[0_4px_20px_rgba(26,26,26,0.04)] mb-2">
+<div class="w-24 h-24 bg-surface border border-outline-variant flex items-center justify-center text-primary shadow-[0_4px_20px_rgba(26,26,26,0.04)] mb-2" style="border-radius:9999px;">
 <span class="font-headline-md text-headline-md">03</span>
 </div>
 <h3 class="font-label-md text-label-md uppercase tracking-wider text-custom-navy">Scale</h3>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Ongoing retainer. We monitor, optimise, and expand the system as your brand grows.</p>
 </div>
 </div>
+</div>
 </section>
 
 <!-- Services Preview -->
-<section class="py-stack-lg bg-surface border-y border-outline-variant/20">
+<section class="py-stack-lg bg-white">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-stack-md">
 <p class="font-label-md text-label-md uppercase tracking-wider text-secondary mb-3">What We Offer</p>
 <h2 class="font-headline-lg text-headline-lg text-primary">Built for Every Stage of Growth</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-8 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.02)]">
+<div class="card-premium p-8 flex flex-col gap-4">
 <span class="material-symbols-outlined text-secondary text-3xl">search</span>
 <h3 class="font-headline-md text-headline-md text-primary">The Operator Audit</h3>
 <p class="font-body-md text-body-md text-on-surface-variant flex-grow">A comprehensive 2-week teardown of your ops stack. We identify the exact bottlenecks costing you revenue and hand you a prioritised action plan.</p>
-<a href="services.html" class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
+<a href="services.html" class="font-label-md text-label-md text-secondary hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
 </div>
-<div class="bg-custom-navy border border-custom-navy rounded-lg p-8 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.08)] relative overflow-hidden">
+<div class="p-8 flex flex-col gap-4 relative overflow-hidden" style="border-radius:24px; background:linear-gradient(160deg,#22345C,#1B2A4A); box-shadow:0 2px 8px -2px rgba(27,42,74,0.15), 0 24px 48px -16px rgba(27,42,74,0.4); transition:transform 0.3s cubic-bezier(.16,1,.3,1);">
 <div class="absolute top-4 right-4 bg-custom-brass text-custom-navy font-label-md text-caption uppercase tracking-wider px-3 py-1 rounded-full">Most Popular</div>
 <span class="material-symbols-outlined text-custom-brass text-3xl">rocket_launch</span>
 <h3 class="font-headline-md text-headline-md text-white">AI OS Build</h3>
 <p class="font-body-md text-body-md text-primary-fixed-dim flex-grow">Full design and deployment of your AI operating system — CX automation, retention flows, and a unified data dashboard. Live in 4–8 weeks.</p>
-<a href="services.html" class="font-label-md text-label-md uppercase tracking-wider text-custom-brass hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
+<a href="services.html" class="font-label-md text-label-md text-custom-brass hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
 </div>
-<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-8 flex flex-col gap-4 shadow-[0_4px_20px_rgba(26,26,26,0.02)]">
+<div class="card-premium p-8 flex flex-col gap-4">
 <span class="material-symbols-outlined text-secondary text-3xl">autorenew</span>
 <h3 class="font-headline-md text-headline-md text-primary">Growth Retainer</h3>
 <p class="font-body-md text-body-md text-on-surface-variant flex-grow">Monthly partnership to monitor, optimise, and expand your AI systems as your brand scales. No stale systems, ever.</p>
-<a href="services.html" class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
+<a href="services.html" class="font-label-md text-label-md text-secondary hover:opacity-75 transition-opacity no-underline mt-2">Learn more →</a>
 </div>
 </div>
 <div class="text-center mt-10">
-<a href="services.html" class="inline-flex items-center justify-center font-label-md text-label-md uppercase px-8 py-4 rounded no-underline hover:opacity-90 transition-opacity" style="background-color:#C9A227;color:#1B2A4A;">See Full Details</a>
+<a href="services.html" class="btn-premium btn-premium-primary no-underline">See Full Details</a>
 </div>
 </div>
 </section>
 <!-- Founder Credibility Band -->
-<section class="bg-custom-navy text-white py-stack-lg my-stack-lg">
+<section class="bg-custom-navy text-white py-stack-lg">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-5 flex flex-col items-center gap-4">
-<div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-custom-brass/20">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
 <img alt="Founder headshot" class="w-full h-full object-cover" src="images/founder.jpg">
 </div>
-<a href="https://www.linkedin.com/in/abhishekpathak123/" target="_blank" rel="noopener" class="text-custom-brass hover:opacity-75 transition-opacity no-underline">
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-</a>
 </div>
 <div class="md:col-span-7 space-y-6 text-center md:text-left mt-8 md:mt-0">
 <span class="material-symbols-outlined text-4xl text-custom-brass opacity-50" data-icon="format_quote">format_quote</span>
 <blockquote class="font-body-lg text-body-lg text-balance font-light leading-relaxed">
                         Ex-Amazon. Founder of Swaadhi.com, scaled across 7 countries. Built and operated consumer brands like Frippy Beverage and Dr Fiber Prebiotic Soda. I've experienced commerce at scale — the operational complexity, customer expectations, and growth challenges firsthand. That's the system I build now.
                     </blockquote>
-<div class="pt-4">
-<span class="font-label-md text-label-md uppercase tracking-wider text-custom-brass">Abhishek Pathak &middot; Founder &amp; CEO, AlgoBridge Ai</span>
+<div class="pt-4 border-t border-white/15 flex items-center justify-center md:justify-between gap-4 flex-wrap">
+<div class="text-left">
+<div class="font-label-md text-label-md uppercase tracking-wider text-custom-brass">Abhishek Pathak</div>
+<div class="font-body-md text-body-md text-primary-fixed-dim mt-1">Founder &amp; CEO, AlgoBridge Ai</div>
+</div>
+<a href="https://www.linkedin.com/in/abhishekpathak123/" target="_blank" rel="noopener" class="flex-shrink-0 w-11 h-11 rounded-xl bg-white/10 hover:bg-custom-brass flex items-center justify-center text-custom-brass hover:text-custom-navy transition-colors no-underline">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+</a>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Final CTA Band -->
-<section class="bg-custom-brass text-custom-navy py-stack-lg">
+<section class="text-custom-navy py-stack-lg" style="background:linear-gradient(135deg,#E8C158,#C9A227 55%,#9A7A1C);">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center space-y-8">
 <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg">Let's find your biggest bottleneck</h2>
 <p class="font-body-lg text-body-lg max-w-2xl mx-auto opacity-90">Schedule a free 30-minute teardown of your current ops stack.</p>
-<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="bg-custom-navy text-white font-label-md text-label-md uppercase px-10 py-5 rounded hover:bg-opacity-90 transition-colors shadow-lg mt-4 inline-block inline-flex items-center justify-center text-center no-underline">
+<a href="#" onclick="Calendly.initPopupWidget({url:'https://calendly.com/business-srisaamba/30min'});return false;" class="btn-premium btn-premium-navy mt-4 no-underline">
                 Book a Call
             </a>
 </div>
@@ -369,4 +695,19 @@
   btn.addEventListener('click',function(){ m.style.display = (m.style.display==='none'?'block':'none'); });
 })();
 </script>
+<script>
+(function(){
+  var rows = document.querySelectorAll('.tcard-wrap, .leak2-wrap');
+  if(!rows.length) return;
+  function reveal(el){ el.classList.add(el.classList.contains('leak2-wrap') ? 'leak2-visible' : 'tcard-visible'); }
+  if(!('IntersectionObserver' in window)){ rows.forEach(reveal); return; }
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ reveal(entry.target); obs.unobserve(entry.target); }
+    });
+  }, {threshold:0.15});
+  rows.forEach(function(r){ obs.observe(r); });
+})();
+</script>
+<style>html{scroll-behavior:smooth;}</style>
 </body></html>
