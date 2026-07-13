@@ -158,6 +158,10 @@
         }
         .btn-premium-navy:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 16px 32px -8px rgba(0,0,0,0.4); }
 
+        @media (max-width: 480px) {
+            .btn-premium { white-space: normal; text-align: center; height: auto; min-height: 52px; padding: 12px 20px; font-size: 15px; }
+        }
+
         /* Premium card system */
         .card-premium {
             border-radius: 24px;
@@ -203,11 +207,11 @@
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
-<body class="bg-[#F5F5F0] text-primary font-body-md antialiased pt-28">
+<body class="bg-[#F5F5F0] text-primary font-body-md antialiased pt-16 md:pt-28">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-300">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-1 max-w-container-max mx-auto">
-<a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" style="height:77px;width:auto;"></a>
+<a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" class="h-11 md:h-[77px] w-auto"></a>
 <div class="hidden md:flex gap-8">
 <a class="nav-link nav-link-active text-secondary font-label-md text-label-md uppercase tracking-wider transition-all" href="index.html">Home</a>
 <a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="services.html">Services</a>
