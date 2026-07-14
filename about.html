@@ -316,9 +316,26 @@ body { font-family: 'Geist','Inter',system-ui,sans-serif !important; }
   m.id='ledger-mobile-menu';
   m.style.cssText='display:none;position:fixed;top:64px;left:0;right:0;background:#fcf9f8;border-bottom:1px solid #e4e1da;z-index:60;padding:8px 20px 16px;box-shadow:0 8px 24px rgba(26,26,26,.06);';
   m.innerHTML=links.map(function(l){return '<a href="'+l[1]+'" style="display:block;padding:13px 0;border-bottom:1px solid #eee;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;text-decoration:none;">'+l[0]+'</a>';}).join('')
-    +'<a href="#" onclick="Calendly.initPopupWidget({url:CAL});document.getElementById(\'ledger-mobile-menu\').style.display=\'none\';return false;" style="display:block;margin-top:14px;text-align:center;background:#C9A227;color:#1B2A4A;padding:13px;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;">Book a Call</a>';
+    +'<a href="#" id="ledger-mobile-book-call" style="display:block;margin-top:14px;text-align:center;background:#C9A227;color:#1B2A4A;padding:13px;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;">Book a Call</a>';
   document.body.appendChild(m);
-  btn.addEventListener('click',function(){ m.style.display = (m.style.display==='none'?'block':'none'); });
+  function closeMenu(){ m.style.display='none'; }
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    m.style.display = (m.style.display==='none' || !m.style.display) ? 'block' : 'none';
+  });
+  var bookBtn=document.getElementById('ledger-mobile-book-call');
+  if(bookBtn){
+    bookBtn.addEventListener('click',function(e){
+      e.preventDefault();
+      closeMenu();
+      if(window.Calendly){ Calendly.initPopupWidget({url:CAL}); }
+    });
+  }
+  document.addEventListener('click',function(e){
+    if(m.style.display==='block' && !m.contains(e.target) && !btn.contains(e.target)){
+      closeMenu();
+    }
+  });
 })();
 </script>
 </body></html>
