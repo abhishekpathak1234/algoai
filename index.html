@@ -118,8 +118,12 @@
         body { font-family: 'Geist','Inter',system-ui,sans-serif; }
         .hero-highlight {
             display: inline; position: relative; z-index: 1;
-            background: rgba(201,162,39,0.28); border-radius: 4px;
             padding: 0 0.18em; margin: 0 -0.18em;
+            background-image: linear-gradient(rgba(201,162,39,0.28), rgba(201,162,39,0.28));
+            background-repeat: no-repeat;
+            background-size: 100% 46%;
+            background-position: 0 82%;
+            border-radius: 4px;
             box-decoration-break: clone; -webkit-box-decoration-break: clone;
         }
         @media (max-width: 640px) {
