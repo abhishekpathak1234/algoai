@@ -4,7 +4,9 @@
     { "source": "/partner/logo.png", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/logo.png" },
     { "source": "/partner", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/partner/" },
     { "source": "/partner/", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/partner/" },
-    { "source": "/partner/:path*", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/partner/:path*" }
+    { "source": "/partner/:path*", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/partner/:path*" },
+    { "source": "/private1", "destination": "https://private-docs-deploy.vercel.app" },
+    { "source": "/private1/", "destination": "https://private-docs-deploy.vercel.app" }
   ],
   "headers": [
     {
