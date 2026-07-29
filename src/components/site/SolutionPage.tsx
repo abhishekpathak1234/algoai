@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { ArrowRight, ChevronRight, Circle, Check, Minus, Plus, TrendingUp, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronRight,
+  Circle,
+  Check,
+  Minus,
+  Plus,
+  TrendingUp,
+  Sparkles,
+} from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { Solution } from "@/data/solutions";
 import { Nav, Footer } from "./Chrome";
@@ -7,7 +16,15 @@ import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { CTABand } from "./CTABand";
 import { solutionBySlug } from "@/data/solutions";
 
-export function SolutionPage({ data, crumbs, kind = "Solution" }: { data: Solution; crumbs: Crumb[]; kind?: string }) {
+export function SolutionPage({
+  data,
+  crumbs,
+  kind = "Solution",
+}: {
+  data: Solution;
+  crumbs: Crumb[];
+  kind?: string;
+}) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
@@ -47,7 +64,9 @@ function Hero({ data, kind }: { data: Solution; kind: string }) {
           <h1 className="mt-6 font-display text-[44px] font-medium leading-[1.04] tracking-tight md:text-[64px]">
             {data.heroTitle}
           </h1>
-          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-muted-foreground">{data.heroSub}</p>
+          <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-muted-foreground">
+            {data.heroSub}
+          </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               to="/book-demo"
@@ -56,7 +75,8 @@ function Hero({ data, kind }: { data: Solution; kind: string }) {
               Book Enterprise Demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/resources/roi-calculator"
+              to="/resources/$slug"
+              params={{ slug: "roi-calculator" }}
               className="inline-flex items-center gap-2 rounded-[14px] border border-border bg-surface/60 px-5 py-3 text-[13px] font-medium text-foreground transition hover:bg-surface"
             >
               Calculate ROI
@@ -79,7 +99,9 @@ function Hero({ data, kind }: { data: Solution; kind: string }) {
           <div className="mt-4 grid grid-cols-2 gap-3">
             {data.kpis.map((k) => (
               <div key={k.label} className="rounded-xl border border-border bg-surface/40 p-4">
-                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">{k.label}</div>
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                  {k.label}
+                </div>
                 <div className="mt-2 font-mono text-2xl text-foreground">{k.value}</div>
                 {k.delta && (
                   <div className="mt-1 inline-flex items-center gap-1 text-[11px] text-emerald">
@@ -163,13 +185,16 @@ function Outcomes({ data }: { data: Solution }) {
             <h2 className="mt-5 font-display text-3xl md:text-4xl">Outcomes on the P&amp;L.</h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            Illustrative outcomes drawn from customer deployments across residential, commercial and enterprise real estate.
+            Illustrative outcomes drawn from customer deployments across residential, commercial and
+            enterprise real estate.
           </p>
         </div>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {data.outcomes.map((m) => (
             <div key={m.label} className="rounded-2xl border border-border bg-card p-6">
-              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">{m.label}</div>
+              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                {m.label}
+              </div>
               <div className="mt-3 font-mono text-3xl">{m.value}</div>
               {m.sub && <div className="mt-1 text-xs text-muted-foreground">{m.sub}</div>}
             </div>
@@ -189,14 +214,20 @@ function Benefits({ items }: { items: string[] }) {
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-[11px] font-medium text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald" /> Benefits
             </div>
-            <h2 className="mt-5 font-display text-3xl md:text-4xl">Fewer meetings. More bookings.</h2>
+            <h2 className="mt-5 font-display text-3xl md:text-4xl">
+              Fewer meetings. More bookings.
+            </h2>
             <p className="mt-4 text-sm text-muted-foreground">
-              Deploy an AI Employee that runs alongside your team — never off, never inconsistent, always reporting.
+              Deploy an AI Employee that runs alongside your team — never off, never inconsistent,
+              always reporting.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {items.map((b) => (
-              <div key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
+              <div
+                key={b}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+              >
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald/15 text-emerald">
                   <Check className="h-3.5 w-3.5" />
                 </div>
@@ -215,7 +246,9 @@ function IntegrationsStrip({ items }: { items: string[] }) {
     <section className="py-16">
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="glass rounded-2xl p-8">
-          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Native integrations</div>
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+            Native integrations
+          </div>
           <div className="mt-5 flex flex-wrap gap-2.5">
             {items.map((i) => (
               <Link
@@ -239,7 +272,9 @@ function RelatedSolutions({ slugs, exclude }: { slugs: string[]; exclude: string
   return (
     <section className="py-16">
       <div className="mx-auto max-w-[1280px] px-6">
-        <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Related AI Employees</div>
+        <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+          Related AI Employees
+        </div>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {rel.slice(0, 3).map((r) => (
             <Link
@@ -286,9 +321,15 @@ function FAQBlock({ faqs }: { faqs: Solution["faqs"] }) {
                 >
                   <div className="flex w-full items-center justify-between gap-4">
                     <div className="font-display text-[16px]">{f.q}</div>
-                    {isOpen ? <Minus className="h-4 w-4 text-emerald" /> : <Plus className="h-4 w-4 text-muted-foreground" />}
+                    {isOpen ? (
+                      <Minus className="h-4 w-4 text-emerald" />
+                    ) : (
+                      <Plus className="h-4 w-4 text-muted-foreground" />
+                    )}
                   </div>
-                  {isOpen && <p className="text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>}
+                  {isOpen && (
+                    <p className="text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>
+                  )}
                 </button>
               );
             })}
