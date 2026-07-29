@@ -16,9 +16,8 @@
     { "source": "/auto/sitemap.xml", "destination": "https://algo-auto.vercel.app/sitemap.xml" },
     { "source": "/auto", "destination": "https://algo-auto.vercel.app/" },
     { "source": "/auto/", "destination": "https://algo-auto.vercel.app/" },
-    { "source": "/easy-ai", "destination": "https://agency.srisaamba.com/" },
-    { "source": "/easy-ai/:path*", "destination": "https://agency.srisaamba.com/:path*" },
-    { "source": "/_next/:path*", "destination": "https://agency.srisaamba.com/_next/:path*" }
+    { "source": "/easy-ai", "destination": "https://algo-easy-ai.vercel.app/easy-ai" },
+    { "source": "/easy-ai/:path*", "destination": "https://algo-easy-ai.vercel.app/easy-ai/:path*" }
   ],
   "headers": [
     {
