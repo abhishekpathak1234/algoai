@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://algobridge.cc/realty/sitemap.xml

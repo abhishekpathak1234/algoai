@@ -12,4 +12,16 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Deployment target is Vercel (dedicated project), not the Cloudflare
+  // Worker the wrapper defaults to — without this, `npm run build` emits a
+  // Cloudflare Worker bundle that Vercel's build step doesn't know how to run.
+  nitro: {
+    preset: "vercel",
+  },
+  // Production is proxied at https://algobridge.cc/realty (same pattern as
+  // /partner), so every asset URL must be emitted with that prefix — matches
+  // the router's basepath in src/router.tsx.
+  vite: {
+    base: "/realty/",
+  },
 });
