@@ -1,6 +1,8 @@
 {
   "redirects": [
-    { "source": "/auto", "destination": "/auto/", "permanent": false }
+    { "source": "/auto", "destination": "/auto/", "permanent": false },
+    { "source": "/easy-ai", "destination": "/easyai", "permanent": false },
+    { "source": "/easy-ai/:path*", "destination": "/easyai/:path*", "permanent": false }
   ],
   "rewrites": [
     { "source": "/partner/assets/:path*", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/assets/:path*" },
@@ -16,8 +18,8 @@
     { "source": "/auto/sitemap.xml", "destination": "https://algo-auto.vercel.app/sitemap.xml" },
     { "source": "/auto", "destination": "https://algo-auto.vercel.app/" },
     { "source": "/auto/", "destination": "https://algo-auto.vercel.app/" },
-    { "source": "/easy-ai", "destination": "https://algo-easy-ai.vercel.app/easy-ai" },
-    { "source": "/easy-ai/:path*", "destination": "https://algo-easy-ai.vercel.app/easy-ai/:path*" }
+    { "source": "/easyai", "destination": "https://algo-easy-ai.vercel.app/easyai" },
+    { "source": "/easyai/:path*", "destination": "https://algo-easy-ai.vercel.app/easyai/:path*" }
   ],
   "headers": [
     {
