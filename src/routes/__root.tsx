@@ -12,6 +12,7 @@ import { StickyDemoCTA } from "../components/site/StickyDemoCTA";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_URL } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -98,8 +99,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Algo Realty",
-          url: "/",
-          description: "AI Workforce for Real Estate. Deploy AI Employees across sales, marketing, CRM, finance and operations.",
+          url: SITE_URL,
+          description:
+            "AI Workforce for Real Estate. Deploy AI Employees across sales, marketing, CRM, finance and operations.",
           parentOrganization: { "@type": "Organization", name: "AlgoBridge" },
         }),
       },
@@ -109,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Algo Realty",
-          url: "/",
+          url: SITE_URL,
         }),
       },
     ],

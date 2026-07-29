@@ -1,7 +1,21 @@
 // SEO helpers for consistent head() metadata + JSON-LD across every route.
-// No absolute URLs (project has no domain yet) — canonical/og:url use relative paths.
+// Production destination is https://algobridge.cc/realty — canonical/og:url
+// are built as absolute URLs against that origin + base path.
 
-export type MetaEntry = { title?: string; name?: string; property?: string; content?: string; charSet?: string };
+export const SITE_URL = "https://algobridge.cc/realty";
+
+export function absoluteUrl(path: string): string {
+  if (path === "/") return SITE_URL;
+  return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+export type MetaEntry = {
+  title?: string;
+  name?: string;
+  property?: string;
+  content?: string;
+  charSet?: string;
+};
 export type LinkEntry = { rel: string; href: string; type?: string };
 export type ScriptEntry = { type: string; children: string };
 
@@ -13,13 +27,14 @@ export function buildMeta(opts: {
   image?: string; // absolute URL only
 }): { meta: MetaEntry[]; links: LinkEntry[] } {
   const { title, description, path, ogType = "website", image } = opts;
+  const url = absoluteUrl(path);
   const meta: MetaEntry[] = [
     { title },
     { name: "description", content: description },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:type", content: ogType },
-    { property: "og:url", content: path },
+    { property: "og:url", content: url },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -28,7 +43,7 @@ export function buildMeta(opts: {
     meta.push({ property: "og:image", content: image });
     meta.push({ name: "twitter:image", content: image });
   }
-  return { meta, links: [{ rel: "canonical", href: path }] };
+  return { meta, links: [{ rel: "canonical", href: url }] };
 }
 
 export function jsonLd(payload: unknown): ScriptEntry {
@@ -43,7 +58,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: idx + 1,
       name: i.name,
-      item: i.path,
+      item: absoluteUrl(i.path),
     })),
   });
 }
@@ -68,12 +83,23 @@ export function softwareLd(name: string, description: string) {
     description,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
     provider: { "@type": "Organization", name: "Algo Realty" },
   });
 }
 
-export function articleLd(opts: { title: string; description: string; path: string; datePublished?: string; category?: string }) {
+export function articleLd(opts: {
+  title: string;
+  description: string;
+  path: string;
+  datePublished?: string;
+  category?: string;
+}) {
   return jsonLd({
     "@context": "https://schema.org",
     "@type": "Article",
