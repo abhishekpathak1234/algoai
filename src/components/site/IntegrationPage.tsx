@@ -5,7 +5,8 @@ import type { Integration } from "@/data/integrations";
 import { Nav, Footer } from "./Chrome";
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { CTABand } from "./CTABand";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CTASupport } from "./CTASupport";
+import { CALENDLY_URL, CTA_BOOK_FULL } from "@/lib/contact";
 
 export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: Crumb[] }) {
   const [open, setOpen] = useState<number | null>(0);
@@ -33,14 +34,17 @@ export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: C
               Algo Realty × <span className="text-emerald-grad">{data.name}</span>
             </h1>
             <p className="mt-5 max-w-2xl text-[15px] text-muted-foreground">{data.short}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6">
+              <CTASupport variant="compact" />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3">
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald hover:brightness-110"
               >
-                Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+                {CTA_BOOK_FULL} <ArrowRight className="h-4 w-4" />
               </a>
               <Link
                 to="/integrations"

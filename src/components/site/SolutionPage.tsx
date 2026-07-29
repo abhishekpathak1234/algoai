@@ -14,8 +14,9 @@ import type { Solution } from "@/data/solutions";
 import { Nav, Footer } from "./Chrome";
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { CTABand } from "./CTABand";
+import { CTASupport } from "./CTASupport";
 import { solutionBySlug } from "@/data/solutions";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CALENDLY_URL, CTA_BOOK_FULL } from "@/lib/contact";
 
 export function SolutionPage({
   data,
@@ -68,14 +69,17 @@ function Hero({ data, kind }: { data: Solution; kind: string }) {
           <p className="mt-6 max-w-xl text-[16px] leading-relaxed text-muted-foreground">
             {data.heroSub}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-6">
+            <CTASupport variant="compact" />
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
-              Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+              {CTA_BOOK_FULL} <ArrowRight className="h-4 w-4" />
             </a>
             <Link
               to="/resources/$slug"

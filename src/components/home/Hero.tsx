@@ -8,6 +8,7 @@ import {
   Star,
 } from "lucide-react";
 import { Counter, LiveDot } from "@/components/home/primitives";
+import { CTA_SEE_IN_ACTION } from "@/lib/contact";
 
 export function Hero() {
   return (
@@ -44,7 +45,7 @@ export function Hero() {
               href="#demo"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-foreground px-6 py-3.5 text-[13px] font-medium text-background transition hover:brightness-95"
             >
-              <span className="relative z-10">Book Enterprise Demo</span>
+              <span className="relative z-10">{CTA_SEE_IN_ACTION}</span>
               <ArrowRight className="relative z-10 h-4 w-4 transition group-hover:translate-x-0.5" />
             </a>
             <a

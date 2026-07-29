@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Minus, Plus } from "lucide-react";
 import { Nav, Footer } from "./Chrome";
 import { CTABand } from "./CTABand";
+import { CTASupport } from "./CTASupport";
 import { tiers } from "@/data/pricing";
 import { CALENDLY_URL } from "@/lib/contact";
 
@@ -54,6 +55,9 @@ export function PricingPage() {
 
         <section className="pb-20">
           <div className="mx-auto max-w-[1280px] px-6">
+            <div className="mb-8 flex justify-center">
+              <CTASupport variant="compact" center />
+            </div>
             <div className="grid gap-4 md:grid-cols-3">
               {tiers.map((t) => (
                 <div

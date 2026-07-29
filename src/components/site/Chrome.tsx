@@ -4,7 +4,13 @@ import { solutions } from "@/data/solutions";
 import { integrations } from "@/data/integrations";
 import { resources } from "@/data/resources";
 import { BrandLogo } from "@/components/site/BrandLogo";
-import { CALENDLY_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
+import {
+  CALENDLY_URL,
+  CTA_BOOK_COMPACT,
+  CTA_BOOK_SHORT,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+} from "@/lib/contact";
 
 const industries = [
   { to: "/industries/builders", label: "Builders" },
@@ -80,7 +86,7 @@ export function Nav() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 rounded-[14px] bg-foreground px-4 py-2 text-[13px] font-medium text-background transition hover:bg-foreground/90"
           >
-            Book Demo
+            {CTA_BOOK_SHORT}
             <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
           </a>
         </div>
@@ -117,7 +123,7 @@ export function Footer() {
         { label: "Pricing", to: "/pricing" },
         { label: "Security", to: "/security" },
         { label: "Contact", to: "/contact" },
-        { label: "Book Demo", to: CALENDLY_URL },
+        { label: CTA_BOOK_COMPACT, to: CALENDLY_URL },
       ],
     },
   ];
@@ -148,7 +154,7 @@ export function Footer() {
                 className="flex items-center gap-2 text-foreground/80 transition hover:text-foreground"
               >
                 <Calendar className="h-3.5 w-3.5 text-emerald" />
-                Book a Strategy Call
+                {CTA_BOOK_COMPACT}
               </a>
             </div>
           </div>

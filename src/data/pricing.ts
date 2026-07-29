@@ -1,3 +1,5 @@
+import { CTA_BOOK_FULL, CTA_TALK_TO_EXPERT } from "@/lib/contact";
+
 export type Tier = {
   slug: string;
   name: string;
@@ -24,7 +26,7 @@ export const tiers: Tier[] = [
       "Weekly executive reporting",
       "Business-hours support",
     ],
-    cta: "Talk to Sales",
+    cta: CTA_TALK_TO_EXPERT,
   },
   {
     slug: "enterprise",
@@ -43,7 +45,7 @@ export const tiers: Tier[] = [
       "SOC 2 + region data residency",
       "SLA-backed uptime",
     ],
-    cta: "Book Enterprise Demo",
+    cta: CTA_BOOK_FULL,
   },
   {
     slug: "custom",
@@ -60,6 +62,6 @@ export const tiers: Tier[] = [
       "On-premise deployment options",
       "Named executive sponsor",
     ],
-    cta: "Contact Sales",
+    cta: CTA_TALK_TO_EXPERT,
   },
 ];

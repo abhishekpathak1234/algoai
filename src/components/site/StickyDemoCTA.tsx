@@ -1,6 +1,6 @@
 import { useRouterState } from "@tanstack/react-router";
 import { ArrowRight, Calendar } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CALENDLY_URL, CTA_BOOK_MOBILE, CTA_BOOK_SHORT } from "@/lib/contact";
 
 export function StickyDemoCTA() {
   const path = useRouterState({ select: (s) => s.location.pathname });
@@ -18,7 +18,7 @@ export function StickyDemoCTA() {
           className="glass flex items-center justify-center gap-2 rounded-full px-4 py-3 text-[13px] font-medium text-foreground shadow-[var(--shadow-elev)]"
         >
           <Calendar className="h-4 w-4 text-emerald" />
-          Book Enterprise Demo
+          {CTA_BOOK_MOBILE}
           <ArrowRight className="h-3.5 w-3.5" />
         </a>
       </div>
@@ -31,7 +31,7 @@ export function StickyDemoCTA() {
           className="glass inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-[13px] font-medium text-foreground shadow-[var(--shadow-elev)] hover:bg-surface"
         >
           <Calendar className="h-4 w-4 text-emerald" />
-          Book Enterprise Demo
+          {CTA_BOOK_SHORT}
           <ArrowRight className="h-3.5 w-3.5" />
         </a>
       </div>

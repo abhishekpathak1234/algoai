@@ -6,22 +6,39 @@ export function WhatsAppButton() {
       <div className="group relative">
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-60"
+          className="pointer-events-none absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-30"
         />
+
+        {/* Mobile: icon only */}
         <a
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with AlgoBridge on WhatsApp"
-          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-elev)] transition-transform duration-200 hover:scale-110"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[var(--shadow-elev)] transition-transform duration-200 hover:scale-110 md:hidden"
         >
           <WhatsAppGlyph className="h-7 w-7" />
         </a>
+
+        {/* Desktop: icon + label pill */}
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat with AlgoBridge on WhatsApp"
+          className="relative hidden items-center gap-2 rounded-full bg-[#25D366] py-3.5 pl-3.5 pr-5 text-[13.5px] font-medium text-white shadow-[var(--shadow-elev)] transition-transform duration-200 hover:scale-105 md:flex"
+        >
+          <WhatsAppGlyph className="h-6 w-6 shrink-0" />
+          Chat with Us
+        </a>
+
         <span
           role="tooltip"
-          className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-lg bg-foreground px-3 py-1.5 text-[12px] font-medium text-background opacity-0 shadow-[var(--shadow-card)] transition-opacity duration-200 group-hover:opacity-100"
+          className="pointer-events-none absolute right-full top-1/2 mr-3 -translate-y-1/2 whitespace-nowrap rounded-lg bg-foreground px-3 py-2 text-right text-[12px] font-medium leading-snug text-background opacity-0 shadow-[var(--shadow-card)] transition-opacity duration-200 group-hover:opacity-100"
         >
-          Chat with AlgoBridge
+          Questions?
+          <br />
+          Chat instantly on WhatsApp
         </span>
       </div>
     </div>

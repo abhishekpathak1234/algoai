@@ -11,7 +11,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Nav, Footer } from "./Chrome";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CTASupport } from "./CTASupport";
+import { CALENDLY_URL, CTA_BOOK_FULL, CTA_SEE_IN_ACTION, CTA_TALK_TO_EXPERT } from "@/lib/contact";
 
 /* -----------------------------------------------------------
    Types
@@ -153,7 +154,7 @@ function Hero({
               href="#demo"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
-              Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+              {CTA_SEE_IN_ACTION} <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#workforce"
@@ -603,14 +604,17 @@ function CTA({ industry }: { industry: string }) {
             See how Algo Realty would run inside your business. A senior specialist will walk
             through workflows, integrations and ROI tailored to {industry.toLowerCase()}.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6 flex justify-center">
+            <CTASupport center />
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
-              Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+              {CTA_BOOK_FULL} <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href={CALENDLY_URL}
@@ -618,7 +622,7 @@ function CTA({ industry }: { industry: string }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] border border-border bg-surface/60 px-5 py-3 text-[13px] font-medium text-foreground transition hover:bg-surface"
             >
-              Talk to Sales
+              {CTA_TALK_TO_EXPERT}
             </a>
           </div>
           <div className="mt-5 text-[11.5px] text-muted-foreground">

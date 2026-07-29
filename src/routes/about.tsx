@@ -4,7 +4,7 @@ import { Nav, Footer } from "@/components/site/Chrome";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTABand } from "@/components/site/CTABand";
 import { buildMeta, breadcrumbLd } from "@/lib/seo";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CALENDLY_URL, CTA_BOOK_COMPACT } from "@/lib/contact";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -97,7 +97,7 @@ function About() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald hover:brightness-110"
                 >
-                  Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+                  {CTA_BOOK_COMPACT} <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
             </div>

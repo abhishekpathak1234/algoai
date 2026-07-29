@@ -3,7 +3,7 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Nav, Footer } from "./Chrome";
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { CTABand } from "./CTABand";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CALENDLY_URL, CTA_BOOK_COMPACT } from "@/lib/contact";
 
 export type ArticleSection = { title: string; body: string };
 
@@ -85,7 +85,7 @@ export function ArticlePage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-4 py-2.5 text-[13px] font-medium text-[#05100C] hover:brightness-110"
               >
-                Book Demo <ArrowRight className="h-4 w-4" />
+                {CTA_BOOK_COMPACT} <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>

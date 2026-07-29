@@ -3,7 +3,8 @@ import { ArrowRight, Mail, MessageSquare, Phone } from "lucide-react";
 import { Nav, Footer } from "@/components/site/Chrome";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { buildMeta, breadcrumbLd } from "@/lib/seo";
-import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/contact";
+import { CTASupport } from "@/components/site/CTASupport";
+import { CALENDLY_URL, CTA_BOOK_COMPACT, WHATSAPP_URL } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -67,6 +68,9 @@ function Contact() {
         </section>
         <section className="py-16">
           <div className="mx-auto max-w-[1280px] px-6">
+            <div className="mb-8">
+              <CTASupport />
+            </div>
             <div className="grid gap-4 md:grid-cols-3">
               {channels.map((c) => (
                 <div
@@ -87,7 +91,7 @@ function Contact() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-4 py-2.5 text-[13px] font-medium text-[#05100C] hover:brightness-110"
                     >
-                      Book a Strategy Call <ArrowRight className="h-4 w-4" />
+                      {CTA_BOOK_COMPACT} <ArrowRight className="h-4 w-4" />
                     </a>
                     <a
                       href={WHATSAPP_URL}

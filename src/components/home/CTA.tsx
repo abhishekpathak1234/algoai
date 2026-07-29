@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Eyebrow } from "@/components/home/primitives";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CTASupport } from "@/components/site/CTASupport";
+import { CALENDLY_URL, CTA_BOOK_FULL } from "@/lib/contact";
 
 export function CTA() {
   return (
@@ -17,14 +18,17 @@ export function CTA() {
               <br />
               <span className="text-signature">Start Deploying AI Employees.</span>
             </h2>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-8 flex justify-center">
+              <CTASupport center />
+            </div>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-4 text-[13.5px] font-medium text-background transition hover:brightness-95"
               >
-                Book Enterprise Demo
+                {CTA_BOOK_FULL}
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
               <a

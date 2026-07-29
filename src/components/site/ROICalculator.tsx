@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { TrendingUp, ArrowRight } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/contact";
+import { CTASupport } from "@/components/site/CTASupport";
+import { CALENDLY_URL, CTA_BOOK_FULL } from "@/lib/contact";
 
 const fmt = (n: number) => "$" + n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 
@@ -86,13 +87,16 @@ export function ROICalculator() {
               highlight
             />
           </div>
+          <div className="mt-8">
+            <CTASupport variant="compact" />
+          </div>
           <a
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald hover:brightness-110"
+            className="mt-4 inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald hover:brightness-110"
           >
-            Book Enterprise Demo <ArrowRight className="h-4 w-4" />
+            {CTA_BOOK_FULL} <ArrowRight className="h-4 w-4" />
           </a>
           <p className="mt-4 text-[11.5px] text-muted-foreground">
             Illustrative model based on typical customer deployments. A tailored ROI review is
