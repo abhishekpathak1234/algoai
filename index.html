@@ -171,6 +171,21 @@
         }
         .btn-premium-navy:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(0,0,0,0.18), 0 16px 32px -8px rgba(0,0,0,0.4); }
 
+        /* Products dropdown */
+        .products-chevron { transition: transform 0.3s cubic-bezier(.16,1,.3,1); }
+        .products-nav-item:hover .products-chevron { transform: rotate(180deg); }
+        .products-panel {
+            opacity: 0; visibility: hidden; transform: translateY(6px);
+            transition: opacity 0.25s cubic-bezier(.16,1,.3,1), transform 0.25s cubic-bezier(.16,1,.3,1), visibility 0.25s;
+        }
+        .products-nav-item:hover .products-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+        .product-item { transition: background-color 0.2s ease; }
+        .product-item:hover { background: rgba(27,42,74,0.04); }
+        .product-item .product-arrow { transition: transform 0.3s cubic-bezier(.16,1,.3,1), opacity 0.3s ease; opacity: 0; transform: translateX(-4px); }
+        .product-item:hover .product-arrow { opacity: 1; transform: translateX(0); }
+        .product-item .product-icon-wrap { transition: transform 0.3s cubic-bezier(.16,1,.3,1); }
+        .product-item:hover .product-icon-wrap { transform: scale(1.08); }
+
         @media (max-width: 480px) {
             .btn-premium { white-space: normal; text-align: center; height: auto; min-height: 52px; padding: 12px 20px; font-size: 15px; }
         }
@@ -227,6 +242,40 @@
 <a href="index.html" class="flex items-center no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" class="h-14 md:h-[88px] w-auto"></a>
 <div class="hidden md:flex gap-8">
 <a class="nav-link nav-link-active text-secondary font-label-md text-label-md uppercase tracking-wider transition-all" href="index.html">Home</a>
+<div class="relative products-nav-item">
+<button class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200 flex items-center gap-1" type="button" aria-haspopup="true" aria-expanded="false">
+Products
+<span class="material-symbols-outlined text-[18px] products-chevron">expand_more</span>
+</button>
+<div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 products-panel">
+<div class="w-[400px] bg-surface rounded-3xl border border-outline-variant/40 shadow-[0_2px_8px_-2px_rgba(27,42,74,0.08),0_32px_64px_-16px_rgba(27,42,74,0.22)] p-3">
+<a href="/auto" class="product-item flex items-center gap-4 p-3 rounded-2xl no-underline">
+<span class="product-icon-wrap flex items-center justify-center w-11 h-11 rounded-xl bg-custom-brass/10 text-2xl shrink-0">🚗</span>
+<span class="flex-1 min-w-0">
+<span class="block font-label-md text-[16px] font-semibold text-custom-navy normal-case tracking-normal">Algo Auto AI</span>
+<span class="block font-label-md text-caption text-on-surface-variant normal-case tracking-normal mt-0.5">AI Employees for Dealerships</span>
+</span>
+<span class="material-symbols-outlined text-[20px] text-custom-brass product-arrow shrink-0">arrow_forward</span>
+</a>
+<a href="/realty" class="product-item flex items-center gap-4 p-3 rounded-2xl no-underline">
+<span class="product-icon-wrap flex items-center justify-center w-11 h-11 rounded-xl bg-custom-brass/10 text-2xl shrink-0">🏢</span>
+<span class="flex-1 min-w-0">
+<span class="flex items-center gap-2"><span class="font-label-md text-[16px] font-semibold text-custom-navy normal-case tracking-normal">Algo Realty AI</span><span class="font-label-md text-[10px] uppercase tracking-wider text-custom-brass bg-custom-brass/10 px-1.5 py-0.5 rounded-full">Soon</span></span>
+<span class="block font-label-md text-caption text-on-surface-variant normal-case tracking-normal mt-0.5">AI Employees for Real Estate</span>
+</span>
+<span class="material-symbols-outlined text-[20px] text-custom-brass product-arrow shrink-0">arrow_forward</span>
+</a>
+<a href="/easy-ai" class="product-item flex items-center gap-4 p-3 rounded-2xl no-underline">
+<span class="product-icon-wrap flex items-center justify-center w-11 h-11 rounded-xl bg-custom-brass/10 text-2xl shrink-0">⚡</span>
+<span class="flex-1 min-w-0">
+<span class="flex items-center gap-2"><span class="font-label-md text-[16px] font-semibold text-custom-navy normal-case tracking-normal">Algo Easy AI</span><span class="font-label-md text-[10px] uppercase tracking-wider text-custom-brass bg-custom-brass/10 px-1.5 py-0.5 rounded-full">Soon</span></span>
+<span class="block font-label-md text-caption text-on-surface-variant normal-case tracking-normal mt-0.5">AI Automation Platform for Small Businesses</span>
+</span>
+<span class="material-symbols-outlined text-[20px] text-custom-brass product-arrow shrink-0">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
 <a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="services.html">Services</a>
 <a class="nav-link text-on-surface-variant font-label-md text-label-md uppercase tracking-wider hover:text-secondary transition-colors duration-200" href="about.html">About</a>
 <a class="nav-link font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-200" href="case-studies.html">Case Studies</a>
@@ -683,6 +732,11 @@
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto gap-4">
 <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary no-underline"><img src="images/logo.png" alt="AlgoBridge Ai" class="h-14 w-auto"></a>
 <div class="flex flex-col gap-3 text-on-surface-variant font-body-md text-body-md">
+<div class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="hover:underline transition-all inline-flex items-center gap-1.5" href="/auto"><span class="text-[15px] leading-none">🚗</span>Algo Auto AI</a>
+<a class="hover:underline transition-all inline-flex items-center gap-1.5" href="/realty"><span class="text-[15px] leading-none">🏢</span>Algo Realty AI<span class="text-[9px] font-bold text-custom-brass bg-custom-brass/10 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Soon</span></a>
+<a class="hover:underline transition-all inline-flex items-center gap-1.5" href="/easy-ai"><span class="text-[15px] leading-none">⚡</span>Algo Easy AI<span class="text-[9px] font-bold text-custom-brass bg-custom-brass/10 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Soon</span></a>
+</div>
 <div class="flex flex-wrap gap-6">
 <a class="hover:underline transition-all" href="privacy.html">Privacy Policy</a>
 <a class="hover:underline transition-all" href="terms.html">Terms of Service</a>
@@ -705,14 +759,43 @@
 (function(){
   var CAL='https://calendly.com/abhishek-algobridge/30min';
   var links=[['Home','index.html'],['Services','services.html'],['About','about.html'],['Case Studies','case-studies.html'],['Contact','contact.html']];
+  var products=[
+    {icon:'🚗', name:'Algo Auto AI', subtitle:'AI Employees for Dealerships', href:'/auto'},
+    {icon:'🏢', name:'Algo Realty AI', subtitle:'AI Employees for Real Estate', href:'/realty', soon:true},
+    {icon:'⚡', name:'Algo Easy AI', subtitle:'AI Automation Platform for Small Businesses', href:'/easy-ai', soon:true}
+  ];
   var btn=[].slice.call(document.querySelectorAll('button')).filter(function(b){
     var s=b.querySelector('.material-symbols-outlined'); return s && s.textContent.trim()==='menu';
   })[0];
   if(!btn) return;
   var m=document.createElement('div');
   m.id='ledger-mobile-menu';
-  m.style.cssText='display:none;position:fixed;top:64px;left:0;right:0;background:#fcf9f8;border-bottom:1px solid #e4e1da;z-index:60;padding:8px 20px 16px;box-shadow:0 8px 24px rgba(26,26,26,.06);';
-  m.innerHTML=links.map(function(l){return '<a href="'+l[1]+'" style="display:block;padding:13px 0;border-bottom:1px solid #eee;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;text-decoration:none;">'+l[0]+'</a>';}).join('')
+  m.style.cssText='display:none;position:fixed;top:64px;left:0;right:0;background:#fcf9f8;border-bottom:1px solid #e4e1da;z-index:60;padding:8px 20px 16px;box-shadow:0 8px 24px rgba(26,26,26,.06);max-height:calc(100vh - 64px);overflow-y:auto;';
+
+  var homeLinkHtml='<a href="'+links[0][1]+'" style="display:block;padding:13px 0;border-bottom:1px solid #eee;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;text-decoration:none;">'+links[0][0]+'</a>';
+
+  var productRowsHtml=products.map(function(p){
+    var soonBadge=p.soon?' <span style="font-size:9px;font-weight:700;color:#C9A227;background:rgba(201,162,39,.12);padding:2px 6px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;vertical-align:1px;">Soon</span>':'';
+    return '<a href="'+p.href+'" style="display:flex;align-items:center;gap:12px;padding:10px 8px;border-radius:12px;text-decoration:none;">'
+      +'<span style="font-size:22px;line-height:1;flex-shrink:0;">'+p.icon+'</span>'
+      +'<span style="flex:1;min-width:0;">'
+        +'<span style="display:block;font-family:Inter,sans-serif;font-weight:600;font-size:14px;color:#1b2a4a;">'+p.name+soonBadge+'</span>'
+        +'<span style="display:block;font-family:Inter,sans-serif;font-size:12px;color:#6b6d76;margin-top:2px;">'+p.subtitle+'</span>'
+      +'</span>'
+      +'<span class="material-symbols-outlined" style="font-size:18px;color:#C9A227;flex-shrink:0;">arrow_forward</span>'
+      +'</a>';
+  }).join('');
+
+  var productsAccordionHtml='<div style="border-bottom:1px solid #eee;">'
+    +'<button id="ledger-mobile-products-toggle" type="button" aria-expanded="false" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 0;background:none;border:none;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;cursor:pointer;">'
+      +'Products<span class="material-symbols-outlined" id="ledger-mobile-products-chevron" style="font-size:20px;transition:transform .25s cubic-bezier(.16,1,.3,1);">expand_more</span>'
+    +'</button>'
+    +'<div id="ledger-mobile-products-panel" style="display:none;padding:2px 0 12px;">'+productRowsHtml+'</div>'
+    +'</div>';
+
+  var restLinksHtml=links.slice(1).map(function(l){return '<a href="'+l[1]+'" style="display:block;padding:13px 0;border-bottom:1px solid #eee;font-family:Inter,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#1b2a4a;text-decoration:none;">'+l[0]+'</a>';}).join('');
+
+  m.innerHTML=homeLinkHtml+productsAccordionHtml+restLinksHtml
     +'<a href="#" id="ledger-mobile-book-call" style="display:block;margin-top:14px;text-align:center;background:#C9A227;color:#1B2A4A;padding:13px;border-radius:4px;font-family:Inter,sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;">Book a Call</a>';
   document.body.appendChild(m);
   function closeMenu(){ m.style.display='none'; }
@@ -720,6 +803,18 @@
     e.stopPropagation();
     m.style.display = (m.style.display==='none' || !m.style.display) ? 'block' : 'none';
   });
+  var productsToggle=document.getElementById('ledger-mobile-products-toggle');
+  var productsPanel=document.getElementById('ledger-mobile-products-panel');
+  var productsChevron=document.getElementById('ledger-mobile-products-chevron');
+  if(productsToggle && productsPanel && productsChevron){
+    productsToggle.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=productsPanel.style.display==='block';
+      productsPanel.style.display=isOpen?'none':'block';
+      productsToggle.setAttribute('aria-expanded', isOpen?'false':'true');
+      productsChevron.style.transform=isOpen?'rotate(0deg)':'rotate(180deg)';
+    });
+  }
   var bookBtn=document.getElementById('ledger-mobile-book-call');
   if(bookBtn){
     bookBtn.addEventListener('click',function(e){
