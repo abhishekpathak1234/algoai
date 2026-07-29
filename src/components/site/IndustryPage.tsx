@@ -11,6 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Nav, Footer } from "./Chrome";
+import { CALENDLY_URL } from "@/lib/contact";
 
 /* -----------------------------------------------------------
    Types
@@ -604,13 +605,17 @@ function CTA({ industry }: { industry: string }) {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="#"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
               Book Enterprise Demo <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] border border-border bg-surface/60 px-5 py-3 text-[13px] font-medium text-foreground transition hover:bg-surface"
             >
               Talk to Sales

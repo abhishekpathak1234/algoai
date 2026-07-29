@@ -55,6 +55,7 @@
   --accent-foreground: #ffffff;
 
   --emerald: oklch(0.78 0.17 158);
+  --gradient-emerald: var(--emerald);
   --cyan: oklch(0.78 0.13 210);
   --purple: #a855f7;
   --magenta: #ec4899;

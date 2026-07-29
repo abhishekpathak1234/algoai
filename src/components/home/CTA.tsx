@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Eyebrow } from "@/components/home/primitives";
+import { CALENDLY_URL } from "@/lib/contact";
 
 export function CTA() {
   return (
@@ -18,13 +18,15 @@ export function CTA() {
               <span className="text-signature">Start Deploying AI Employees.</span>
             </h2>
             <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                to="/book-demo"
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-4 text-[13.5px] font-medium text-background transition hover:brightness-95"
               >
                 Book Enterprise Demo
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-              </Link>
+              </a>
               <a
                 href="#workforce"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-background/40 px-7 py-4 text-[13.5px] font-medium text-foreground transition hover:border-border-strong hover:bg-background"

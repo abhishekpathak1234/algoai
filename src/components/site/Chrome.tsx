@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar, Phone } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import { integrations } from "@/data/integrations";
 import { resources } from "@/data/resources";
 import { BrandLogo } from "@/components/site/BrandLogo";
+import { CALENDLY_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
 
 const industries = [
   { to: "/industries/builders", label: "Builders" },
@@ -73,13 +74,15 @@ export function Nav() {
               Pricing
             </Link>
           </nav>
-          <Link
-            to="/book-demo"
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 rounded-[14px] bg-foreground px-4 py-2 text-[13px] font-medium text-background transition hover:bg-foreground/90"
           >
             Book Demo
             <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-          </Link>
+          </a>
         </div>
       </div>
     </header>
@@ -114,7 +117,7 @@ export function Footer() {
         { label: "Pricing", to: "/pricing" },
         { label: "Security", to: "/security" },
         { label: "Contact", to: "/contact" },
-        { label: "Book Demo", to: "/book-demo" },
+        { label: "Book Demo", to: CALENDLY_URL },
       ],
     },
   ];
@@ -130,6 +133,24 @@ export function Footer() {
               AI Workforce for Real Estate. A product by AlgoBridge — deployed across leading
               developers, brokerages and enterprises worldwide.
             </p>
+            <div className="mt-6 space-y-2 text-sm">
+              <a
+                href={`tel:${PHONE_TEL}`}
+                className="flex items-center gap-2 text-foreground/80 transition hover:text-foreground"
+              >
+                <Phone className="h-3.5 w-3.5 text-emerald" />
+                {PHONE_DISPLAY}
+              </a>
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/80 transition hover:text-foreground"
+              >
+                <Calendar className="h-3.5 w-3.5 text-emerald" />
+                Book a Strategy Call
+              </a>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {cols.map((c) => (
@@ -138,16 +159,29 @@ export function Footer() {
                   {c.t}
                 </div>
                 <ul className="mt-4 space-y-2 text-sm">
-                  {c.items.map((x) => (
-                    <li key={x.label}>
-                      <Link
-                        to={x.to}
-                        className="text-foreground/80 transition hover:text-foreground"
-                      >
-                        {x.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {c.items.map((x) =>
+                    x.to.startsWith("http") ? (
+                      <li key={x.label}>
+                        <a
+                          href={x.to}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-foreground/80 transition hover:text-foreground"
+                        >
+                          {x.label}
+                        </a>
+                      </li>
+                    ) : (
+                      <li key={x.label}>
+                        <Link
+                          to={x.to}
+                          className="text-foreground/80 transition hover:text-foreground"
+                        >
+                          {x.label}
+                        </Link>
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
             ))}

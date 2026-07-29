@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Mail, MessageSquare, Phone } from "lucide-react";
 import { Nav, Footer } from "@/components/site/Chrome";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { buildMeta, breadcrumbLd } from "@/lib/seo";
+import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -27,22 +28,16 @@ function Contact() {
       icon: Mail,
       title: "Enterprise Sales",
       body: "For CEOs, MDs, sales directors and revenue leaders.",
-      cta: "Book a Demo",
-      to: "/book-demo" as const,
     },
     {
       icon: MessageSquare,
       title: "Partnerships",
       body: "For channel partners, brokerages and franchise networks.",
-      cta: "Book a Demo",
-      to: "/book-demo" as const,
     },
     {
       icon: Phone,
       title: "Customer Support",
       body: "For existing customers running Algo Realty in production.",
-      cta: "Talk to Sales",
-      to: "/book-demo" as const,
     },
   ];
   return (
@@ -85,12 +80,24 @@ function Contact() {
                   <p className="mt-2 flex-1 text-[13.5px] leading-relaxed text-muted-foreground">
                     {c.body}
                   </p>
-                  <Link
-                    to={c.to}
-                    className="mt-6 inline-flex items-center gap-2 rounded-[14px] border border-border bg-surface/60 px-4 py-2.5 text-[13px] font-medium text-foreground hover:bg-surface"
-                  >
-                    {c.cta} <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <div className="mt-6 flex flex-col gap-2.5">
+                    <a
+                      href={CALENDLY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-4 py-2.5 text-[13px] font-medium text-[#05100C] hover:brightness-110"
+                    >
+                      Book a Strategy Call <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-[14px] border border-border bg-surface/60 px-4 py-2.5 text-[13px] font-medium text-foreground hover:bg-surface"
+                    >
+                      Chat on WhatsApp <MessageSquare className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

@@ -1,9 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Nav, Footer } from "@/components/site/Chrome";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CTABand } from "@/components/site/CTABand";
 import { buildMeta, breadcrumbLd } from "@/lib/seo";
+import { CALENDLY_URL } from "@/lib/contact";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -90,12 +91,14 @@ function About() {
                     The AI infrastructure company behind Algo Realty, Algo Auto and Algo Easy.
                   </div>
                 </div>
-                <Link
-                  to="/book-demo"
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald hover:brightness-110"
                 >
                   Book Enterprise Demo <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>

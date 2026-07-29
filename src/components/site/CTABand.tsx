@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/contact";
 
 export function CTABand({
   eyebrow = "Enterprise Deployment",
   title = "Ready to deploy your AI Workforce?",
   sub = "A senior specialist will walk through workflows, integrations and ROI tailored to your business.",
-  primaryHref = "/book-demo",
   primaryLabel = "Book Enterprise Demo",
   secondaryHref = "/resources/roi-calculator",
   secondaryLabel = "Calculate ROI",
@@ -13,7 +13,6 @@ export function CTABand({
   eyebrow?: string;
   title?: string;
   sub?: string;
-  primaryHref?: string;
   primaryLabel?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
@@ -30,12 +29,14 @@ export function CTABand({
             <p className="mt-3 text-sm text-muted-foreground">{sub}</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to={primaryHref}
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
               {primaryLabel} <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to={secondaryHref}
               className="inline-flex items-center gap-2 rounded-[14px] border border-border bg-surface/60 px-5 py-3 text-[13px] font-medium text-foreground transition hover:bg-surface"

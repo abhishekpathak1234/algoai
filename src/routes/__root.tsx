@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { StickyDemoCTA } from "../components/site/StickyDemoCTA";
+import { WhatsAppButton } from "../components/site/WhatsAppButton";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -143,6 +144,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Outlet />
       <StickyDemoCTA />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }

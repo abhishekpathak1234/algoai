@@ -4,6 +4,7 @@ import { ArrowRight, Check, Minus, Plus } from "lucide-react";
 import { Nav, Footer } from "./Chrome";
 import { CTABand } from "./CTABand";
 import { tiers } from "@/data/pricing";
+import { CALENDLY_URL } from "@/lib/contact";
 
 const faqs = [
   {
@@ -80,8 +81,10 @@ export function PricingPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    to="/book-demo"
+                  <a
+                    href={CALENDLY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`mt-10 inline-flex items-center justify-center gap-2 rounded-[14px] px-5 py-3 text-[13px] font-medium ${
                       t.featured
                         ? "bg-[var(--gradient-emerald)] text-[#05100C] ring-emerald hover:brightness-110"
@@ -89,7 +92,7 @@ export function PricingPage() {
                     }`}
                   >
                     {t.cta} <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>

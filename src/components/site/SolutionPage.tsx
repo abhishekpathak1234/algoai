@@ -15,6 +15,7 @@ import { Nav, Footer } from "./Chrome";
 import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { CTABand } from "./CTABand";
 import { solutionBySlug } from "@/data/solutions";
+import { CALENDLY_URL } from "@/lib/contact";
 
 export function SolutionPage({
   data,
@@ -68,12 +69,14 @@ function Hero({ data, kind }: { data: Solution; kind: string }) {
             {data.heroSub}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              to="/book-demo"
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-5 py-3 text-[13px] font-medium text-[#05100C] ring-emerald transition hover:brightness-110"
             >
               Book Enterprise Demo <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to="/resources/$slug"
               params={{ slug: "roi-calculator" }}
