@@ -11,6 +11,7 @@ export const CALENDLY_URL = `${CALENDLY_BASE_URL}?utm_source=website&utm_medium=
 
 export const PHONE_DISPLAY = "+91 8054430418";
 export const PHONE_TEL = "+918054430418";
+export const CONTACT_EMAIL = "abhishek@algobridge.cc";
 
 const WHATSAPP_NUMBER = "918054430418";
 const WHATSAPP_MESSAGE = "Hi, I'd like to learn more about Algo Realty AI Employees.";

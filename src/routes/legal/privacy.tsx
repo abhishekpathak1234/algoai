@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePage } from "@/components/site/ArticlePage";
 import { buildMeta, breadcrumbLd } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 export const Route = createFileRoute("/legal/privacy")({
   head: () => ({
@@ -52,7 +53,7 @@ function Privacy() {
         },
         {
           title: "Contact",
-          body: "Email privacy@algorealty.example to exercise rights or ask questions.",
+          body: `Email ${CONTACT_EMAIL} to exercise rights or ask questions.`,
         },
       ]}
     />
