@@ -19,7 +19,13 @@
     { "source": "/auto", "destination": "https://algo-auto.vercel.app/" },
     { "source": "/auto/", "destination": "https://algo-auto.vercel.app/" },
     { "source": "/easyai", "destination": "https://algo-easy-ai.vercel.app/easyai" },
-    { "source": "/easyai/:path*", "destination": "https://algo-easy-ai.vercel.app/easyai/:path*" }
+    { "source": "/easyai/:path*", "destination": "https://algo-easy-ai.vercel.app/easyai/:path*" },
+    { "source": "/realty/assets/:path*", "destination": "https://algo-realty.vercel.app/assets/:path*" },
+    { "source": "/realty/favicon.ico", "destination": "https://algo-realty.vercel.app/favicon.ico" },
+    { "source": "/realty/robots.txt", "destination": "https://algo-realty.vercel.app/robots.txt" },
+    { "source": "/realty", "destination": "https://algo-realty.vercel.app/realty/" },
+    { "source": "/realty/", "destination": "https://algo-realty.vercel.app/realty/" },
+    { "source": "/realty/:path*", "destination": "https://algo-realty.vercel.app/realty/:path*" }
   ],
   "headers": [
     {
