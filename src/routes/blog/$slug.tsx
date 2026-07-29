@@ -37,7 +37,8 @@ export const Route = createFileRoute("/blog/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Post not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Post not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/blog/${params.slug}`;
     return {
@@ -48,7 +49,13 @@ export const Route = createFileRoute("/blog/$slug")({
         ogType: "article",
       }),
       scripts: [
-        articleLd({ title: data.title, description: data.excerpt, path, category: data.category, datePublished: data.published }),
+        articleLd({
+          title: data.title,
+          description: data.excerpt,
+          path,
+          category: data.category,
+          datePublished: data.published,
+        }),
         breadcrumbLd([
           { name: "Home", path: "/" },
           { name: "Blog", path: "/blog" },

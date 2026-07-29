@@ -46,7 +46,9 @@ export function HubPage({
             <h1 className="mt-6 max-w-3xl font-display text-[44px] font-medium leading-[1.04] tracking-tight md:text-[64px]">
               {title}
             </h1>
-            <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">{intro}</p>
+            <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted-foreground">
+              {intro}
+            </p>
             {categories && categories.length > 0 && (
               <div className="mt-8 flex flex-wrap gap-2">
                 {categories.map((c) => (
@@ -91,7 +93,9 @@ export function HubPage({
                     <div className="font-display text-lg">{card.title}</div>
                     <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />
                   </div>
-                  <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">{card.sub}</p>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
+                    {card.sub}
+                  </p>
                   {card.meta && card.icon && (
                     <div className="mt-4 text-[11px] uppercase tracking-widest text-muted-foreground">
                       {card.meta}

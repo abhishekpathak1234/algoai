@@ -10,7 +10,8 @@ export const Route = createFileRoute("/solutions/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Solution not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Solution not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/solutions/${params.slug}`;
     return {

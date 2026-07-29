@@ -48,7 +48,8 @@ export const tiers: Tier[] = [
   {
     slug: "custom",
     name: "Custom",
-    tagline: "For franchise networks, luxury boutiques and multinational portfolios with bespoke needs.",
+    tagline:
+      "For franchise networks, luxury boutiques and multinational portfolios with bespoke needs.",
     price: "Bespoke",
     priceNote: "Scoped per engagement",
     features: [

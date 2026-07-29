@@ -66,7 +66,9 @@ export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: C
                     </div>
                     <div>
                       <div className="font-display text-[15px]">{s.title}</div>
-                      <p className="mt-1 text-[13.5px] leading-relaxed text-muted-foreground">{s.body}</p>
+                      <p className="mt-1 text-[13.5px] leading-relaxed text-muted-foreground">
+                        {s.body}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -92,7 +94,9 @@ export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: C
                         Step {String(i + 1).padStart(2, "0")}
                       </div>
                       <div className="mt-1 font-display text-[15px]">{s.title}</div>
-                      {s.sub && <div className="mt-1 text-[11.5px] text-muted-foreground">{s.sub}</div>}
+                      {s.sub && (
+                        <div className="mt-1 text-[11.5px] text-muted-foreground">{s.sub}</div>
+                      )}
                     </div>
                     {i < data.workflow.length - 1 && (
                       <ChevronRight className="my-auto hidden h-5 w-5 text-border-strong md:block" />
@@ -123,9 +127,15 @@ export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: C
                     >
                       <div className="flex w-full items-center justify-between gap-4">
                         <div className="font-display text-[16px]">{f.q}</div>
-                        {isOpen ? <Minus className="h-4 w-4 text-emerald" /> : <Plus className="h-4 w-4 text-muted-foreground" />}
+                        {isOpen ? (
+                          <Minus className="h-4 w-4 text-emerald" />
+                        ) : (
+                          <Plus className="h-4 w-4 text-muted-foreground" />
+                        )}
                       </div>
-                      {isOpen && <p className="text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>}
+                      {isOpen && (
+                        <p className="text-[14px] leading-relaxed text-muted-foreground">{f.a}</p>
+                      )}
                     </button>
                   );
                 })}
@@ -134,7 +144,10 @@ export function IntegrationPage({ data, crumbs }: { data: Integration; crumbs: C
           </div>
         </section>
 
-        <CTABand title={`Connect ${data.name} in a day.`} sub={`See ${data.name} synced end-to-end with your AI Workforce.`} />
+        <CTABand
+          title={`Connect ${data.name} in a day.`}
+          sub={`See ${data.name} synced end-to-end with your AI Workforce.`}
+        />
       </main>
       <Footer />
     </div>

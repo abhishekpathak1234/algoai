@@ -11,7 +11,8 @@ export const Route = createFileRoute("/resources/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Resource not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Resource not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/resources/${params.slug}`;
     return {
@@ -63,7 +64,8 @@ function ResourceRoute() {
       )}
       {data.kind === "assessment" && (
         <div className="mt-12 rounded-2xl border border-border bg-card p-6 text-[14px] text-muted-foreground">
-          The AI Readiness Assessment is delivered as a private, guided session with your executive team. Book a demo to run it.
+          The AI Readiness Assessment is delivered as a private, guided session with your executive
+          team. Book a demo to run it.
         </div>
       )}
     </ArticlePage>

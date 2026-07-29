@@ -35,19 +35,33 @@ function buildEntries(): SitemapEntry[] {
     { path: "/legal/terms", changefreq: "yearly", priority: "0.3" },
   ];
 
-  for (const s of solutions) entries.push({ path: `/solutions/${s.slug}`, changefreq: "monthly", priority: "0.8" });
-  for (const e of employees) entries.push({ path: `/ai-employees/${e.slug}`, changefreq: "monthly", priority: "0.8" });
-  for (const i of integrations) entries.push({ path: `/integrations/${i.slug}`, changefreq: "monthly", priority: "0.7" });
-  for (const r of resources) entries.push({ path: `/resources/${r.slug}`, changefreq: "monthly", priority: "0.7" });
-  for (const c of caseStudies) entries.push({ path: `/case-studies/${c.slug}`, changefreq: "monthly", priority: "0.7" });
-  for (const b of blogPosts) entries.push({ path: `/blog/${b.slug}`, changefreq: "monthly", priority: "0.6" });
-  for (const c of blogCategories) entries.push({ path: `/blog/category/${c.slug}`, changefreq: "weekly", priority: "0.5" });
+  for (const s of solutions)
+    entries.push({ path: `/solutions/${s.slug}`, changefreq: "monthly", priority: "0.8" });
+  for (const e of employees)
+    entries.push({ path: `/ai-employees/${e.slug}`, changefreq: "monthly", priority: "0.8" });
+  for (const i of integrations)
+    entries.push({ path: `/integrations/${i.slug}`, changefreq: "monthly", priority: "0.7" });
+  for (const r of resources)
+    entries.push({ path: `/resources/${r.slug}`, changefreq: "monthly", priority: "0.7" });
+  for (const c of caseStudies)
+    entries.push({ path: `/case-studies/${c.slug}`, changefreq: "monthly", priority: "0.7" });
+  for (const b of blogPosts)
+    entries.push({ path: `/blog/${b.slug}`, changefreq: "monthly", priority: "0.6" });
+  for (const c of blogCategories)
+    entries.push({ path: `/blog/category/${c.slug}`, changefreq: "weekly", priority: "0.5" });
 
   const industryPaths = [
-    "builders", "developers", "agencies", "brokerages",
-    "property-management", "commercial", "luxury", "channel-partners",
+    "builders",
+    "developers",
+    "agencies",
+    "brokerages",
+    "property-management",
+    "commercial",
+    "luxury",
+    "channel-partners",
   ];
-  for (const p of industryPaths) entries.push({ path: `/industries/${p}`, changefreq: "monthly", priority: "0.8" });
+  for (const p of industryPaths)
+    entries.push({ path: `/industries/${p}`, changefreq: "monthly", priority: "0.8" });
 
   return entries;
 }
@@ -63,7 +77,9 @@ export const Route = createFileRoute("/sitemap.xml")({
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
             `  </url>`,
-          ].filter(Boolean).join("\n"),
+          ]
+            .filter(Boolean)
+            .join("\n"),
         );
 
         const xml = [

@@ -10,7 +10,8 @@ export const Route = createFileRoute("/integrations/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Integration not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Integration not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/integrations/${params.slug}`;
     return {

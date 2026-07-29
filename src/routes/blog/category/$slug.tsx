@@ -10,7 +10,8 @@ export const Route = createFileRoute("/blog/category/$slug")({
     return { cat };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Category not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Category not found" }, { name: "robots", content: "noindex" }] };
     const { cat } = loaderData;
     const path = `/blog/category/${params.slug}`;
     return {
@@ -37,7 +38,11 @@ function CategoryPage() {
   return (
     <HubPage
       eyebrow={`Category · ${cat.name}`}
-      title={<>{cat.name} <span className="text-emerald-grad">insights.</span></>}
+      title={
+        <>
+          {cat.name} <span className="text-emerald-grad">insights.</span>
+        </>
+      }
       intro={cat.description}
       crumbs={[
         { name: "Home", path: "/" },

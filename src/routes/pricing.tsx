@@ -7,7 +7,8 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     ...buildMeta({
       title: "Pricing — Algo Realty",
-      description: "Enterprise pricing for Algo Realty's AI Workforce. Annual, per-employee pricing with multi-year discounts and named executive support.",
+      description:
+        "Enterprise pricing for Algo Realty's AI Workforce. Annual, per-employee pricing with multi-year discounts and named executive support.",
       path: "/pricing",
       ogType: "product",
     }),
@@ -27,7 +28,10 @@ export const Route = createFileRoute("/pricing")({
         })),
       }),
       faqLd(pricingFaqs),
-      breadcrumbLd([{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]),
+      breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Pricing", path: "/pricing" },
+      ]),
     ],
   }),
   component: PricingPage,

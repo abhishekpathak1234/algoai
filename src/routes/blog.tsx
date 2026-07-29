@@ -7,7 +7,8 @@ export const Route = createFileRoute("/blog")({
   head: () => ({
     ...buildMeta({
       title: "Blog — Algo Realty",
-      description: "Insights on AI, sales, marketing, CRM, automation and revenue intelligence for enterprise real estate.",
+      description:
+        "Insights on AI, sales, marketing, CRM, automation and revenue intelligence for enterprise real estate.",
       path: "/blog",
     }),
   }),
@@ -18,9 +19,16 @@ function BlogHub() {
   return (
     <HubPage
       eyebrow="Knowledge Center"
-      title={<>Playbooks for <span className="text-emerald-grad">AI-first</span> real estate.</>}
+      title={
+        <>
+          Playbooks for <span className="text-emerald-grad">AI-first</span> real estate.
+        </>
+      }
       intro="Deep, practical writing from the Algo Realty team — for CEOs, MDs, sales directors, marketing leaders and CRM heads."
-      crumbs={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }]}
+      crumbs={[
+        { name: "Home", path: "/" },
+        { name: "Blog", path: "/blog" },
+      ]}
       categories={blogCategories.map((c) => c.name)}
       cards={blogPosts.slice(0, 60).map((p) => ({
         to: `/blog/${p.slug}`,

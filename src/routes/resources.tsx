@@ -7,7 +7,8 @@ export const Route = createFileRoute("/resources")({
   head: () => ({
     ...buildMeta({
       title: "Resources — Algo Realty",
-      description: "Enterprise resources for real estate leaders — implementation guides, ROI calculators, playbooks, whitepapers, videos and webinars.",
+      description:
+        "Enterprise resources for real estate leaders — implementation guides, ROI calculators, playbooks, whitepapers, videos and webinars.",
       path: "/resources",
     }),
   }),
@@ -27,9 +28,17 @@ function ResourcesHub() {
   return (
     <HubPage
       eyebrow="Resource Center"
-      title={<>Playbooks for the <span className="text-emerald-grad">AI-native</span> real estate company.</>}
+      title={
+        <>
+          Playbooks for the <span className="text-emerald-grad">AI-native</span> real estate
+          company.
+        </>
+      }
       intro="Deep-dive guides, calculators and playbooks from the Algo Realty team — used by builders, developers and brokerages worldwide."
-      crumbs={[{ name: "Home", path: "/" }, { name: "Resources", path: "/resources" }]}
+      crumbs={[
+        { name: "Home", path: "/" },
+        { name: "Resources", path: "/resources" },
+      ]}
       cards={resources.map((r) => ({
         to: `/resources/${r.slug}`,
         title: r.title,

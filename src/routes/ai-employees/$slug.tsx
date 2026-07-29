@@ -10,7 +10,8 @@ export const Route = createFileRoute("/ai-employees/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "AI Employee not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "AI Employee not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/ai-employees/${params.slug}`;
     return {

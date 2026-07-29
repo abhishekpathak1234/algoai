@@ -13,7 +13,8 @@ export const Route = createFileRoute("/case-studies/$slug")({
     return { data };
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
+    if (!loaderData)
+      return { meta: [{ title: "Case study not found" }, { name: "robots", content: "noindex" }] };
     const { data } = loaderData;
     const path = `/case-studies/${params.slug}`;
     return {
@@ -43,11 +44,13 @@ function CaseStudyPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <main>
-        <Breadcrumbs items={[
-          { name: "Home", path: "/" },
-          { name: "Case Studies", path: "/case-studies" },
-          { name: data.company, path: `/case-studies/${data.slug}` },
-        ]} />
+        <Breadcrumbs
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Case Studies", path: "/case-studies" },
+            { name: data.company, path: `/case-studies/${data.slug}` },
+          ]}
+        />
         <section className="relative overflow-hidden pt-10 pb-16">
           <div className="bg-aurora absolute inset-0 -z-10" />
           <div className="mx-auto max-w-[1080px] px-6">
@@ -58,7 +61,9 @@ function CaseStudyPage() {
               {data.company}
             </h1>
             <div className="mt-3 text-[13px] text-muted-foreground">{data.tag}</div>
-            <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted-foreground">{data.short}</p>
+            <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-muted-foreground">
+              {data.short}
+            </p>
           </div>
         </section>
 
@@ -67,18 +72,25 @@ function CaseStudyPage() {
             <div className="grid gap-6 md:grid-cols-3">
               <Block title="Challenge" body={data.challenge} />
               <Block title="Solution" body={data.solution} />
-              <Block title="Illustrative Impact" body="Metrics reflect an illustrative deployment across residential and enterprise portfolios." />
+              <Block
+                title="Illustrative Impact"
+                body="Metrics reflect an illustrative deployment across residential and enterprise portfolios."
+              />
             </div>
           </div>
         </section>
 
         <section className="border-y border-border bg-surface/30 py-16">
           <div className="mx-auto max-w-[1080px] px-6">
-            <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Impact</div>
+            <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+              Impact
+            </div>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {data.impact.map((m: { label: string; value: string; sub?: string }) => (
                 <div key={m.label} className="rounded-2xl border border-border bg-card p-6">
-                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground">{m.label}</div>
+                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                    {m.label}
+                  </div>
                   <div className="mt-3 flex items-baseline gap-2">
                     <span className="font-mono text-3xl">{m.value}</span>
                     {m.sub && (
@@ -108,11 +120,20 @@ function CaseStudyPage() {
         {related.length > 0 && (
           <section className="border-t border-border py-16">
             <div className="mx-auto max-w-[1280px] px-6">
-              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">More case studies</div>
+              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                More case studies
+              </div>
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {related.map((r) => (
-                  <Link key={r.slug} to="/case-studies/$slug" params={{ slug: r.slug }} className="group rounded-2xl border border-border bg-card p-6 hover:border-border-strong">
-                    <div className="text-[11px] uppercase tracking-widest text-muted-foreground">{r.industry}</div>
+                  <Link
+                    key={r.slug}
+                    to="/case-studies/$slug"
+                    params={{ slug: r.slug }}
+                    className="group rounded-2xl border border-border bg-card p-6 hover:border-border-strong"
+                  >
+                    <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                      {r.industry}
+                    </div>
                     <div className="mt-3 font-display text-[16px]">{r.company}</div>
                     <p className="mt-2 text-[13px] text-muted-foreground">{r.short}</p>
                     <ArrowRight className="mt-4 h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-foreground" />

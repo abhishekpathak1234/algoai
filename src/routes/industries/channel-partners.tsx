@@ -1,7 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Users, Signal, Wallet, HeartHandshake, LineChart, Database,
-  MessageSquare, FileText, BarChart3,
+  Users,
+  Signal,
+  Wallet,
+  HeartHandshake,
+  LineChart,
+  Database,
+  MessageSquare,
+  FileText,
+  BarChart3,
 } from "lucide-react";
 import { IndustryPage, type IndustryPageProps } from "@/components/site/IndustryPage";
 
@@ -9,9 +16,16 @@ export const Route = createFileRoute("/industries/channel-partners")({
   head: () => ({
     meta: [
       { title: "AI Workforce for Channel Partners — Algo Realty" },
-      { name: "description", content: "Grow channel sales with AI. Automate partner onboarding, lead distribution, commission tracking, training and performance reporting." },
+      {
+        name: "description",
+        content:
+          "Grow channel sales with AI. Automate partner onboarding, lead distribution, commission tracking, training and performance reporting.",
+      },
       { property: "og:title", content: "AI Workforce for Channel Partners — Algo Realty" },
-      { property: "og:description", content: "Turn your channel network into a predictable, high-performing revenue engine." },
+      {
+        property: "og:description",
+        content: "Turn your channel network into a predictable, high-performing revenue engine.",
+      },
     ],
   }),
   component: ChannelPartnersPage,
@@ -21,8 +35,13 @@ const data: IndustryPageProps = {
   slug: "channel-partners",
   industry: "Channel Partners",
   eyebrow: "For Channel Partner Networks",
-  heroTitle: (<>Grow channel sales <span className="text-emerald-grad">with AI.</span></>),
-  heroSub: "Automate partner onboarding, lead distribution, commission tracking, training and performance reporting — across hundreds or thousands of partners.",
+  heroTitle: (
+    <>
+      Grow channel sales <span className="text-emerald-grad">with AI.</span>
+    </>
+  ),
+  heroSub:
+    "Automate partner onboarding, lead distribution, commission tracking, training and performance reporting — across hundreds or thousands of partners.",
   heroKpis: [
     { label: "Active Partners", value: "3,412" },
     { label: "Partner Revenue", value: "$182M" },
@@ -30,12 +49,36 @@ const data: IndustryPageProps = {
     { label: "Payout Cycle", value: "6 days" },
   ],
   painPoints: [
-    { icon: Users, title: "Partner Onboarding", body: "Every new partner takes weeks to activate — paperwork, training and access are manual." },
-    { icon: Signal, title: "Lead Sharing", body: "Distributing leads fairly across partners and tracking outcomes is chaotic." },
-    { icon: Wallet, title: "Commission Disputes", body: "Payout delays and disputes erode partner trust and quarterly performance." },
-    { icon: MessageSquare, title: "Fragmented Communication", body: "Partners live across WhatsApp, portals and email — nothing centralises." },
-    { icon: FileText, title: "Training At Scale", body: "Keeping partners updated on inventory, pricing and playbook is nearly impossible." },
-    { icon: LineChart, title: "Weak Performance Visibility", body: "No real-time view into partner activity, conversion and revenue contribution." },
+    {
+      icon: Users,
+      title: "Partner Onboarding",
+      body: "Every new partner takes weeks to activate — paperwork, training and access are manual.",
+    },
+    {
+      icon: Signal,
+      title: "Lead Sharing",
+      body: "Distributing leads fairly across partners and tracking outcomes is chaotic.",
+    },
+    {
+      icon: Wallet,
+      title: "Commission Disputes",
+      body: "Payout delays and disputes erode partner trust and quarterly performance.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Fragmented Communication",
+      body: "Partners live across WhatsApp, portals and email — nothing centralises.",
+    },
+    {
+      icon: FileText,
+      title: "Training At Scale",
+      body: "Keeping partners updated on inventory, pricing and playbook is nearly impossible.",
+    },
+    {
+      icon: LineChart,
+      title: "Weak Performance Visibility",
+      body: "No real-time view into partner activity, conversion and revenue contribution.",
+    },
   ],
   impacts: [
     { label: "Partner Activation", value: "5x faster" },
@@ -44,15 +87,75 @@ const data: IndustryPageProps = {
     { label: "Active Partners", value: "+61%" },
   ],
   employees: [
-    { name: "AI Partner Manager", role: "Channel Ops", icon: Users, skills: ["Per-partner AI teammate", "Daily nudges", "Escalations", "Playbook enforcement"] },
-    { name: "AI Lead Distribution", role: "Sales Ops", icon: Signal, skills: ["Rule + intent based routing", "Load balancing", "Auto reassignment", "SLA tracking"] },
-    { name: "AI Commission Assistant", role: "Finance", icon: Wallet, skills: ["Auto-calculations", "Slab handling", "Payout scheduling", "Dispute reduction"] },
-    { name: "AI Training Assistant", role: "Enablement", icon: FileText, skills: ["Inventory + pricing updates", "Playbook drills", "Certifications", "Micro-learning"] },
-    { name: "AI Partner Support", role: "Support", icon: HeartHandshake, skills: ["Partner Q&A", "Onboarding help", "Portal navigation", "Escalations"] },
-    { name: "AI Deal Desk", role: "Sales Ops", icon: Database, skills: ["Deal registration", "Approval workflows", "Discount handling", "Legal + finance routing"] },
-    { name: "AI Performance Analytics", role: "Leadership", icon: BarChart3, skills: ["Per-partner scorecards", "Cohort analysis", "Program ROI", "Anomaly detection"] },
-    { name: "AI Communication", role: "Communication", icon: MessageSquare, skills: ["Broadcast updates", "Personalised nudges", "Multi-channel", "Multi-lingual"] },
-    { name: "AI Revenue Intelligence", role: "Leadership", icon: LineChart, skills: ["Channel forecasts", "Partner ranking", "Program mix", "Investment briefs"] },
+    {
+      name: "AI Partner Manager",
+      role: "Channel Ops",
+      icon: Users,
+      skills: ["Per-partner AI teammate", "Daily nudges", "Escalations", "Playbook enforcement"],
+    },
+    {
+      name: "AI Lead Distribution",
+      role: "Sales Ops",
+      icon: Signal,
+      skills: [
+        "Rule + intent based routing",
+        "Load balancing",
+        "Auto reassignment",
+        "SLA tracking",
+      ],
+    },
+    {
+      name: "AI Commission Assistant",
+      role: "Finance",
+      icon: Wallet,
+      skills: ["Auto-calculations", "Slab handling", "Payout scheduling", "Dispute reduction"],
+    },
+    {
+      name: "AI Training Assistant",
+      role: "Enablement",
+      icon: FileText,
+      skills: [
+        "Inventory + pricing updates",
+        "Playbook drills",
+        "Certifications",
+        "Micro-learning",
+      ],
+    },
+    {
+      name: "AI Partner Support",
+      role: "Support",
+      icon: HeartHandshake,
+      skills: ["Partner Q&A", "Onboarding help", "Portal navigation", "Escalations"],
+    },
+    {
+      name: "AI Deal Desk",
+      role: "Sales Ops",
+      icon: Database,
+      skills: [
+        "Deal registration",
+        "Approval workflows",
+        "Discount handling",
+        "Legal + finance routing",
+      ],
+    },
+    {
+      name: "AI Performance Analytics",
+      role: "Leadership",
+      icon: BarChart3,
+      skills: ["Per-partner scorecards", "Cohort analysis", "Program ROI", "Anomaly detection"],
+    },
+    {
+      name: "AI Communication",
+      role: "Communication",
+      icon: MessageSquare,
+      skills: ["Broadcast updates", "Personalised nudges", "Multi-channel", "Multi-lingual"],
+    },
+    {
+      name: "AI Revenue Intelligence",
+      role: "Leadership",
+      icon: LineChart,
+      skills: ["Channel forecasts", "Partner ranking", "Program mix", "Investment briefs"],
+    },
   ],
   workflow: [
     { title: "Partner Signup" },
@@ -89,7 +192,8 @@ const data: IndustryPageProps = {
   caseStudy: {
     company: "National developer · 3,400 channel partners",
     tag: "Illustrative channel program deployment",
-    quote: "Partner activation, distribution and payouts finally feel like a product — not a chase. Our channel revenue is up sharply with the same team.",
+    quote:
+      "Partner activation, distribution and payouts finally feel like a product — not a chase. Our channel revenue is up sharply with the same team.",
     before: [
       { label: "Partner Activation", value: "22 days" },
       { label: "Payout Cycle", value: "22 days" },
@@ -104,11 +208,25 @@ const data: IndustryPageProps = {
     ],
   },
   faqs: [
-    { q: "Can it scale to thousands of channel partners?", a: "Yes — the AI Workforce operates per-partner with orchestration at the program level, scaling elastically." },
-    { q: "Does it integrate with our channel and CRM stack?", a: "Native integrations with Salesforce, LeadSquared, Sell.Do, Zoho and enterprise channel management platforms." },
-    { q: "How are commissions handled?", a: "The AI Commission Assistant handles complex slabs, splits and payout schedules with full audit trails." },
-    { q: "Can we run region-specific programs?", a: "Yes. Program structure, incentives and communication can be configured per region, product and partner tier." },
+    {
+      q: "Can it scale to thousands of channel partners?",
+      a: "Yes — the AI Workforce operates per-partner with orchestration at the program level, scaling elastically.",
+    },
+    {
+      q: "Does it integrate with our channel and CRM stack?",
+      a: "Native integrations with Salesforce, LeadSquared, Sell.Do, Zoho and enterprise channel management platforms.",
+    },
+    {
+      q: "How are commissions handled?",
+      a: "The AI Commission Assistant handles complex slabs, splits and payout schedules with full audit trails.",
+    },
+    {
+      q: "Can we run region-specific programs?",
+      a: "Yes. Program structure, incentives and communication can be configured per region, product and partner tier.",
+    },
   ],
 };
 
-function ChannelPartnersPage() { return <IndustryPage {...data} />; }
+function ChannelPartnersPage() {
+  return <IndustryPage {...data} />;
+}

@@ -38,9 +38,15 @@ function Menu({ label, items }: { label: string; items: { to: string; label: str
 }
 
 export function Nav() {
-  const solutionItems = solutions.slice(0, 10).map((s) => ({ to: `/solutions/${s.slug}`, label: s.name }));
-  const integrationItems = integrations.slice(0, 12).map((i) => ({ to: `/integrations/${i.slug}`, label: i.name }));
-  const resourceItems = resources.slice(0, 10).map((r) => ({ to: `/resources/${r.slug}`, label: r.title }));
+  const solutionItems = solutions
+    .slice(0, 10)
+    .map((s) => ({ to: `/solutions/${s.slug}`, label: s.name }));
+  const integrationItems = integrations
+    .slice(0, 12)
+    .map((i) => ({ to: `/integrations/${i.slug}`, label: i.name }));
+  const resourceItems = resources
+    .slice(0, 10)
+    .map((r) => ({ to: `/resources/${r.slug}`, label: r.title }));
 
   return (
     <header className="fixed top-0 z-50 w-full">
@@ -49,13 +55,23 @@ export function Nav() {
           <Link to="/" className="mr-6 flex items-center" aria-label="Algo Realty home">
             <BrandLogo variant="header" />
           </Link>
-          <nav aria-label="Primary" className="hidden items-center gap-7 text-[13px] text-muted-foreground md:flex">
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-7 text-[13px] text-muted-foreground md:flex"
+          >
             <Menu label="Solutions" items={solutionItems} />
-            <Link to="/ai-employees" className="transition hover:text-foreground">AI Employees</Link>
-            <Menu label="Industries" items={industries.map((i) => ({ to: i.to, label: i.label }))} />
+            <Link to="/ai-employees" className="transition hover:text-foreground">
+              AI Employees
+            </Link>
+            <Menu
+              label="Industries"
+              items={industries.map((i) => ({ to: i.to, label: i.label }))}
+            />
             <Menu label="Integrations" items={integrationItems} />
             <Menu label="Resources" items={resourceItems} />
-            <Link to="/pricing" className="transition hover:text-foreground">Pricing</Link>
+            <Link to="/pricing" className="transition hover:text-foreground">
+              Pricing
+            </Link>
           </nav>
           <Link
             to="/book-demo"
@@ -111,17 +127,23 @@ export function Footer() {
               <BrandLogo variant="footer" />
             </div>
             <p className="mt-5 max-w-sm text-sm text-muted-foreground">
-              AI Workforce for Real Estate. A product by AlgoBridge — deployed across leading developers, brokerages and enterprises worldwide.
+              AI Workforce for Real Estate. A product by AlgoBridge — deployed across leading
+              developers, brokerages and enterprises worldwide.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {cols.map((c) => (
               <div key={c.t}>
-                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">{c.t}</div>
+                <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                  {c.t}
+                </div>
                 <ul className="mt-4 space-y-2 text-sm">
                   {c.items.map((x) => (
                     <li key={x.label}>
-                      <Link to={x.to} className="text-foreground/80 transition hover:text-foreground">
+                      <Link
+                        to={x.to}
+                        className="text-foreground/80 transition hover:text-foreground"
+                      >
                         {x.label}
                       </Link>
                     </li>
@@ -134,9 +156,15 @@ export function Footer() {
         <div className="mt-14 flex flex-col justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
           <div>© {new Date().getFullYear()} Algo Realty · An AlgoBridge Company</div>
           <div className="flex gap-6">
-            <Link to="/legal/privacy" className="hover:text-foreground">Privacy</Link>
-            <Link to="/legal/terms" className="hover:text-foreground">Terms</Link>
-            <Link to="/security" className="hover:text-foreground">Security</Link>
+            <Link to="/legal/privacy" className="hover:text-foreground">
+              Privacy
+            </Link>
+            <Link to="/legal/terms" className="hover:text-foreground">
+              Terms
+            </Link>
+            <Link to="/security" className="hover:text-foreground">
+              Security
+            </Link>
           </div>
         </div>
       </div>

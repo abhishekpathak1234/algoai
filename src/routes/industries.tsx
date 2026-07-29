@@ -1,28 +1,85 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Users, Layers, Home, Crown, Signal, Cog, Briefcase } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Users,
+  Layers,
+  Home,
+  Crown,
+  Signal,
+  Cog,
+  Briefcase,
+} from "lucide-react";
 import { Nav, Footer } from "@/components/site/Chrome";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
       { title: "Industries — Algo Realty" },
-      { name: "description", content: "AI Workforce tailored for every real estate business — builders, developers, brokerages, agencies, property management, commercial, luxury and channel partners." },
+      {
+        name: "description",
+        content:
+          "AI Workforce tailored for every real estate business — builders, developers, brokerages, agencies, property management, commercial, luxury and channel partners.",
+      },
       { property: "og:title", content: "Industries — Algo Realty" },
-      { property: "og:description", content: "Explore dedicated AI Workforce deployments for every segment of real estate." },
+      {
+        property: "og:description",
+        content: "Explore dedicated AI Workforce deployments for every segment of real estate.",
+      },
     ],
   }),
   component: IndustriesIndex,
 });
 
 const items = [
-  { to: "/industries/builders", label: "Builders", icon: Building2, sub: "Automate lead-to-booking for residential builders." },
-  { to: "/industries/developers", label: "Developers", icon: Layers, sub: "Scale multi-project portfolios without scaling teams." },
-  { to: "/industries/agencies", label: "Agencies", icon: Briefcase, sub: "Close more deals with less manual work." },
-  { to: "/industries/brokerages", label: "Brokerages", icon: Users, sub: "Give every broker their own AI team." },
-  { to: "/industries/property-management", label: "Property Management", icon: Home, sub: "Automate tenants, maintenance and rent." },
-  { to: "/industries/commercial", label: "Commercial", icon: Signal, sub: "Enterprise workforce for institutional portfolios." },
-  { to: "/industries/luxury", label: "Luxury", icon: Crown, sub: "White-glove concierge for HNW clients." },
-  { to: "/industries/channel-partners", label: "Channel Partners", icon: Cog, sub: "Grow channel sales with AI." },
+  {
+    to: "/industries/builders",
+    label: "Builders",
+    icon: Building2,
+    sub: "Automate lead-to-booking for residential builders.",
+  },
+  {
+    to: "/industries/developers",
+    label: "Developers",
+    icon: Layers,
+    sub: "Scale multi-project portfolios without scaling teams.",
+  },
+  {
+    to: "/industries/agencies",
+    label: "Agencies",
+    icon: Briefcase,
+    sub: "Close more deals with less manual work.",
+  },
+  {
+    to: "/industries/brokerages",
+    label: "Brokerages",
+    icon: Users,
+    sub: "Give every broker their own AI team.",
+  },
+  {
+    to: "/industries/property-management",
+    label: "Property Management",
+    icon: Home,
+    sub: "Automate tenants, maintenance and rent.",
+  },
+  {
+    to: "/industries/commercial",
+    label: "Commercial",
+    icon: Signal,
+    sub: "Enterprise workforce for institutional portfolios.",
+  },
+  {
+    to: "/industries/luxury",
+    label: "Luxury",
+    icon: Crown,
+    sub: "White-glove concierge for HNW clients.",
+  },
+  {
+    to: "/industries/channel-partners",
+    label: "Channel Partners",
+    icon: Cog,
+    sub: "Grow channel sales with AI.",
+  },
 ];
 
 function IndustriesIndex() {
@@ -38,12 +95,12 @@ function IndustriesIndex() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald" /> Industries
             </div>
             <h1 className="mt-6 max-w-3xl font-display text-[44px] font-medium leading-[1.04] tracking-tight md:text-[64px]">
-              An AI Workforce for every part of <span className="text-emerald-grad">real estate.</span>
+              An AI Workforce for every part of{" "}
+              <span className="text-emerald-grad">real estate.</span>
             </h1>
             <p className="mt-6 max-w-xl text-[15px] text-muted-foreground">
-              Explore how Algo Realty is deployed inside builders, developers,
-              brokerages, agencies, property management, commercial, luxury and
-              channel partner networks.
+              Explore how Algo Realty is deployed inside builders, developers, brokerages, agencies,
+              property management, commercial, luxury and channel partner networks.
             </p>
           </div>
         </section>

@@ -10,9 +10,13 @@ export function CTABand({
   secondaryHref = "/resources/roi-calculator",
   secondaryLabel = "Calculate ROI",
 }: {
-  eyebrow?: string; title?: string; sub?: string;
-  primaryHref?: string; primaryLabel?: string;
-  secondaryHref?: string; secondaryLabel?: string;
+  eyebrow?: string;
+  title?: string;
+  sub?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
 }) {
   return (
     <section className="py-20">

@@ -15,11 +15,25 @@ import { Nav, Footer } from "./Chrome";
 /* -----------------------------------------------------------
    Types
    ----------------------------------------------------------- */
-export type Metric = { label: string; value: string; delta?: string; accent?: "emerald" | "cyan" | "purple" };
-export type Employee = { name: string; role: string; icon: ComponentType<{ className?: string }>; skills: string[] };
+export type Metric = {
+  label: string;
+  value: string;
+  delta?: string;
+  accent?: "emerald" | "cyan" | "purple";
+};
+export type Employee = {
+  name: string;
+  role: string;
+  icon: ComponentType<{ className?: string }>;
+  skills: string[];
+};
 export type WorkflowStep = { title: string; sub?: string };
 export type Impact = { label: string; value: string; sub?: string };
-export type PainPoint = { title: string; body: string; icon: ComponentType<{ className?: string }> };
+export type PainPoint = {
+  title: string;
+  body: string;
+  icon: ComponentType<{ className?: string }>;
+};
 export type FAQ = { q: string; a: string };
 
 export type IndustryPageProps = {
@@ -198,7 +212,9 @@ function MiniSparkline() {
   const h = 30;
   const step = w / (pts.length - 1);
   const d = pts
-    .map((p, i) => `${i === 0 ? "M" : "L"}${(i * step).toFixed(2)},${(h - (p / max) * h).toFixed(2)}`)
+    .map(
+      (p, i) => `${i === 0 ? "M" : "L"}${(i * step).toFixed(2)},${(h - (p / max) * h).toFixed(2)}`,
+    )
     .join(" ");
   return (
     <div className="mt-4 rounded-xl border border-border bg-surface/40 p-4">
@@ -228,7 +244,8 @@ function PainPoints({ items, industry }: { items: PainPoint[]; industry: string 
           eyebrow="The Cost of Delay"
           title={
             <>
-              Where {industry.toLowerCase()} <span className="text-emerald-grad">lose revenue.</span>
+              Where {industry.toLowerCase()}{" "}
+              <span className="text-emerald-grad">lose revenue.</span>
             </>
           }
           sub="Every hour without a response, every unassigned lead, every manual follow-up — silently erodes bookings and margin."
@@ -266,8 +283,8 @@ function Impacts({ items }: { items: Impact[] }) {
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            Illustrative outcomes based on customer deployments across residential,
-            commercial and enterprise real estate portfolios.
+            Illustrative outcomes based on customer deployments across residential, commercial and
+            enterprise real estate portfolios.
           </p>
         </div>
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -294,7 +311,8 @@ function Workforce({ employees, industry }: { employees: Employee[]; industry: s
           eyebrow="AI Workforce"
           title={
             <>
-              The AI Employees hired by <span className="text-emerald-grad">{industry.toLowerCase()}</span>.
+              The AI Employees hired by{" "}
+              <span className="text-emerald-grad">{industry.toLowerCase()}</span>.
             </>
           }
           sub="Each employee is specialised, deployable in weeks and orchestrated with your existing team, CRM and channels."
@@ -346,10 +364,7 @@ function Workflow({ steps }: { steps: WorkflowStep[] }) {
           }
           sub="From the first inquiry to booking, collections and post-sale customer success — every step handled without human bottlenecks."
         />
-        <div
-          ref={ref}
-          className="glass mt-14 overflow-hidden rounded-2xl p-8"
-        >
+        <div ref={ref} className="glass mt-14 overflow-hidden rounded-2xl p-8">
           <div className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-stretch">
             {steps.map((s, i) => (
               <div key={s.title} className="flex flex-1 items-stretch gap-3">
@@ -396,7 +411,10 @@ function Benefits({ items }: { items: string[] }) {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {items.map((b) => (
-              <div key={b} className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
+              <div
+                key={b}
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+              >
                 <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-emerald/15 text-emerald">
                   <Check className="h-3.5 w-3.5" />
                 </div>
@@ -578,12 +596,11 @@ function CTA({ industry }: { industry: string }) {
             <span className="h-1.5 w-1.5 rounded-full bg-emerald" /> {industry}
           </div>
           <h2 className="mt-6 font-display text-4xl leading-tight md:text-5xl">
-            Ready to deploy your{" "}
-            <span className="text-emerald-grad">AI Workforce?</span>
+            Ready to deploy your <span className="text-emerald-grad">AI Workforce?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
-            See how Algo Realty would run inside your business. A senior specialist
-            will walk through workflows, integrations and ROI tailored to {industry.toLowerCase()}.
+            See how Algo Realty would run inside your business. A senior specialist will walk
+            through workflows, integrations and ROI tailored to {industry.toLowerCase()}.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a

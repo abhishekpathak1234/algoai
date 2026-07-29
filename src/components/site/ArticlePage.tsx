@@ -36,7 +36,12 @@ export function ArticlePage({
         <article className="mx-auto max-w-[860px] px-6 pt-8 pb-20">
           <div className="flex items-center gap-3 text-[11px] uppercase tracking-widest text-muted-foreground">
             <span>{eyebrow}</span>
-            {category && (<><span className="text-border-strong">·</span><span>{category}</span></>)}
+            {category && (
+              <>
+                <span className="text-border-strong">·</span>
+                <span>{category}</span>
+              </>
+            )}
             {readTime && (
               <>
                 <span className="text-border-strong">·</span>
@@ -55,7 +60,9 @@ export function ArticlePage({
             <div className="mt-12 space-y-10">
               {sections.map((s) => (
                 <section key={s.title}>
-                  <h2 className="font-display text-[24px] leading-tight md:text-[28px]">{s.title}</h2>
+                  <h2 className="font-display text-[24px] leading-tight md:text-[28px]">
+                    {s.title}
+                  </h2>
                   <p className="mt-3 text-[15.5px] leading-relaxed text-foreground/85">{s.body}</p>
                 </section>
               ))}
@@ -65,9 +72,13 @@ export function ArticlePage({
           {children}
 
           <div className="mt-14 rounded-2xl border border-border bg-card p-6">
-            <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Take the next step</div>
+            <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+              Take the next step
+            </div>
             <div className="mt-3 flex flex-wrap items-center justify-between gap-4">
-              <div className="font-display text-[18px]">See how an AI Workforce would run inside your business.</div>
+              <div className="font-display text-[18px]">
+                See how an AI Workforce would run inside your business.
+              </div>
               <Link
                 to="/book-demo"
                 className="inline-flex items-center gap-2 rounded-[14px] bg-[var(--gradient-emerald)] px-4 py-2.5 text-[13px] font-medium text-[#05100C] hover:brightness-110"
@@ -81,7 +92,9 @@ export function ArticlePage({
         {related && related.length > 0 && (
           <section className="border-t border-border py-16">
             <div className="mx-auto max-w-[1280px] px-6">
-              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Related reads</div>
+              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                Related reads
+              </div>
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {related.map((r) => (
                   <a
