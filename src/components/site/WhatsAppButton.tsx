@@ -1,8 +1,13 @@
 import { WHATSAPP_URL } from "@/lib/contact";
+import { useFooterInView } from "@/hooks/use-footer-in-view";
 
 export function WhatsAppButton() {
+  const footerInView = useFooterInView();
+  // Hidden once the footer scrolls into view so it doesn't sit on top of
+  // footer content/links.
+  if (footerInView) return null;
   return (
-    <div className="fixed bottom-4 right-4 z-[60] md:bottom-6 md:right-6">
+    <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 z-[60] md:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] md:right-6">
       <div className="group relative">
         <span
           aria-hidden
