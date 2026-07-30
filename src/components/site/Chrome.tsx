@@ -12,6 +12,34 @@ import {
   PHONE_DISPLAY,
   PHONE_TEL,
 } from "@/lib/contact";
+import autoIcon from "@/assets/algo-auto-icon.png";
+import realtyIcon from "@/assets/algo-realty-icon.png";
+import easyIcon from "@/assets/algo-easy-icon.png";
+
+const siblingProducts = [
+  {
+    key: "auto",
+    label: "Algo Auto AI",
+    sub: "AI Employees for Dealerships",
+    href: "/auto",
+    icon: autoIcon,
+  },
+  {
+    key: "realty",
+    label: "Algo Realty AI",
+    sub: "AI Employees for Real Estate",
+    href: "/",
+    icon: realtyIcon,
+    self: true,
+  },
+  {
+    key: "easy",
+    label: "Algo Easy AI",
+    sub: "AI Automation Platform for Small Businesses",
+    href: "/easyai",
+    icon: easyIcon,
+  },
+] as const;
 
 const industries = [
   { to: "/industries/builders", label: "Builders" },
@@ -45,6 +73,54 @@ function Menu({ label, items }: { label: string; items: { to: string; label: str
   );
 }
 
+function ProductsMenu() {
+  return (
+    <div className="group relative">
+      <button className="flex items-center gap-1 transition hover:text-foreground">Products</button>
+      <div className="invisible absolute left-1/2 top-full z-[70] mt-3 w-72 -translate-x-1/2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+        <div className="rounded-xl border border-border bg-card/95 p-2 shadow-[var(--shadow-elev)] backdrop-blur-xl">
+          {siblingProducts.map((p) => {
+            const row = (
+              <>
+                <img
+                  src={p.icon}
+                  alt={p.label}
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 shrink-0 rounded-full object-cover"
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[13px] font-medium text-foreground">
+                    {p.self ? `✓ ${p.label}` : p.label}
+                  </span>
+                  <span className="mt-0.5 block text-[11.5px] text-muted-foreground">{p.sub}</span>
+                </span>
+              </>
+            );
+            return p.self ? (
+              <Link
+                key={p.key}
+                to={p.href}
+                className="flex items-center gap-4 rounded-lg px-2 py-2.5 transition hover:bg-surface"
+              >
+                {row}
+              </Link>
+            ) : (
+              <a
+                key={p.key}
+                href={p.href}
+                className="flex items-center gap-4 rounded-lg px-2 py-2.5 transition hover:bg-surface"
+              >
+                {row}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const mobileNavLinks = [
   { to: "/solutions", label: "Solutions" },
   { to: "/ai-employees", label: "AI Employees" },
@@ -69,11 +145,11 @@ export function Nav() {
   return (
     <header className="fixed top-0 z-50 w-full">
       <div className="mx-auto mt-4 max-w-[1280px] px-6">
-        <div className="glass flex h-16 items-center justify-between rounded-2xl pl-5 pr-5 md:h-[72px] lg:h-20 lg:pl-8">
+        <div className="glass flex h-16 items-center justify-between rounded-2xl pl-5 pr-5 md:h-[72px] lg:h-[106px] lg:pl-8">
           <div className="flex items-center">
             <Link
               to="/"
-              className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-16"
+              className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-[90px]"
               aria-label="Algo Realty home"
             >
               <BrandLogo variant="header" />
@@ -95,6 +171,7 @@ export function Nav() {
               <Link to="/pricing" className="transition hover:text-foreground">
                 Pricing
               </Link>
+              <ProductsMenu />
             </nav>
           </div>
           <a
@@ -131,6 +208,48 @@ export function Nav() {
                 </Link>
               ))}
             </nav>
+            <div className="mt-3 border-t border-border pt-3">
+              <div className="px-3 pb-2 text-[11px] uppercase tracking-widest text-muted-foreground">
+                Products
+              </div>
+              {siblingProducts.map((p) => {
+                const row = (
+                  <>
+                    <img
+                      src={p.icon}
+                      alt={p.label}
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 shrink-0 rounded-full object-cover"
+                    />
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[14px] text-foreground/85">
+                        {p.self ? `✓ ${p.label}` : p.label}
+                      </span>
+                    </span>
+                  </>
+                );
+                return p.self ? (
+                  <Link
+                    key={p.key}
+                    to={p.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-4 rounded-lg px-3 py-2.5 transition hover:bg-surface"
+                  >
+                    {row}
+                  </Link>
+                ) : (
+                  <a
+                    key={p.key}
+                    href={p.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center gap-4 rounded-lg px-3 py-2.5 transition hover:bg-surface"
+                  >
+                    {row}
+                  </a>
+                );
+              })}
+            </div>
             <a
               href={CALENDLY_URL}
               target="_blank"
@@ -211,7 +330,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
             {cols.map((c) => (
               <div key={c.t}>
                 <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
@@ -244,10 +363,43 @@ export function Footer() {
                 </ul>
               </div>
             ))}
+            <div>
+              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+                Products
+              </div>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {siblingProducts.map((p) => (
+                  <li key={p.key} className="flex items-center gap-3">
+                    <img
+                      src={p.icon}
+                      alt={p.label}
+                      width={24}
+                      height={24}
+                      className="h-5 w-5 shrink-0 rounded-full object-cover md:h-6 md:w-6"
+                    />
+                    {p.self ? (
+                      <Link
+                        to={p.href}
+                        className="text-foreground transition hover:text-foreground"
+                      >
+                        ✓ Algo Realty
+                      </Link>
+                    ) : (
+                      <a
+                        href={p.href}
+                        className="text-foreground/80 transition hover:text-foreground"
+                      >
+                        {p.label.replace(" AI", "")}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="mt-14 flex flex-col justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>© {new Date().getFullYear()} Algo Realty · An AlgoBridge Company</div>
+          <div>© {new Date().getFullYear()} AlgoBridge AI. All rights reserved.</div>
           <div className="flex gap-6">
             <Link to="/legal/privacy" className="hover:text-foreground">
               Privacy
