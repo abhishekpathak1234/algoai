@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, Phone } from "lucide-react";
+import { ArrowRight, Calendar, Menu as MenuIcon, Phone, X } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import { integrations } from "@/data/integrations";
 import { resources } from "@/data/resources";
@@ -27,8 +28,8 @@ function Menu({ label, items }: { label: string; items: { to: string; label: str
   return (
     <div className="group relative">
       <button className="flex items-center gap-1 transition hover:text-foreground">{label}</button>
-      <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-        <div className="glass max-h-[70vh] overflow-y-auto rounded-xl p-2">
+      <div className="invisible absolute left-1/2 top-full z-[70] mt-3 w-72 -translate-x-1/2 opacity-0 transition group-hover:visible group-hover:opacity-100">
+        <div className="max-h-[70vh] overflow-y-auto rounded-xl border border-border bg-card/95 shadow-[var(--shadow-elev)] backdrop-blur-xl p-2">
           {items.map((i) => (
             <Link
               key={i.to}
@@ -44,7 +45,17 @@ function Menu({ label, items }: { label: string; items: { to: string; label: str
   );
 }
 
+const mobileNavLinks = [
+  { to: "/solutions", label: "Solutions" },
+  { to: "/ai-employees", label: "AI Employees" },
+  { to: "/industries", label: "Industries" },
+  { to: "/integrations", label: "Integrations" },
+  { to: "/resources", label: "Resources" },
+  { to: "/pricing", label: "Pricing" },
+] as const;
+
 export function Nav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const solutionItems = solutions
     .slice(0, 10)
     .map((s) => ({ to: `/solutions/${s.slug}`, label: s.name }));
@@ -84,12 +95,48 @@ export function Nav() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 rounded-[14px] bg-foreground px-4 py-2 text-[13px] font-medium text-background transition hover:bg-foreground/90"
+            className="group hidden items-center gap-1.5 rounded-[14px] bg-foreground px-4 py-2 text-[13px] font-medium text-background transition hover:bg-foreground/90 md:inline-flex"
           >
             {CTA_BOOK_SHORT}
             <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
           </a>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            className="grid h-9 w-9 place-items-center rounded-full border border-border text-foreground/85 transition hover:bg-surface md:hidden"
+          >
+            {mobileOpen ? <X className="h-4 w-4" /> : <MenuIcon className="h-4 w-4" />}
+          </button>
         </div>
+
+        {mobileOpen && (
+          <div className="mt-2 rounded-2xl border border-border bg-card/95 p-4 shadow-[var(--shadow-elev)] backdrop-blur-xl md:hidden">
+            <nav aria-label="Primary mobile" className="flex flex-col text-[14px]">
+              {mobileNavLinks.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-3 py-3 text-foreground/85 transition hover:bg-surface hover:text-foreground"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="group mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-[14px] bg-foreground px-4 py-3 text-[13px] font-medium text-background transition hover:bg-foreground/90"
+            >
+              {CTA_BOOK_SHORT}
+              <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+            </a>
+          </div>
+        )}
       </div>
     </header>
   );
