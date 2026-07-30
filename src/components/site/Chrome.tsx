@@ -73,7 +73,7 @@ export function Nav() {
           <div className="flex items-center">
             <Link
               to="/"
-              className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-14"
+              className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-16"
               aria-label="Algo Realty home"
             >
               <BrandLogo variant="header" />

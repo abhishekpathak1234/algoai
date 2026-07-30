@@ -11,7 +11,7 @@ export function BrandLogo({ variant = "header", className }: BrandLogoProps) {
   const sizeClass =
     variant === "footer"
       ? "h-[72px] max-w-[300px] md:h-[110px] md:max-w-[520px]"
-      : "h-[38px] max-w-[180px] md:h-[46px] md:max-w-[220px] lg:h-[52px] lg:max-w-[260px]";
+      : "h-[38px] max-w-[180px] md:h-[46px] md:max-w-[220px] lg:h-[62px] lg:max-w-[300px]";
 
   return (
     <img
