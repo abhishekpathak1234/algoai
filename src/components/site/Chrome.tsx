@@ -69,28 +69,34 @@ export function Nav() {
   return (
     <header className="fixed top-0 z-50 w-full">
       <div className="mx-auto mt-4 max-w-[1280px] px-6">
-        <div className="glass flex items-center justify-between rounded-2xl px-5 py-3">
-          <Link to="/" className="mr-6 flex items-center" aria-label="Algo Realty home">
-            <BrandLogo variant="header" />
-          </Link>
-          <nav
-            aria-label="Primary"
-            className="hidden items-center gap-7 text-[13px] text-muted-foreground md:flex"
-          >
-            <Menu label="Solutions" items={solutionItems} />
-            <Link to="/ai-employees" className="transition hover:text-foreground">
-              AI Employees
+        <div className="glass flex h-16 items-center justify-between rounded-2xl pl-5 pr-5 md:h-[72px] lg:h-20 lg:pl-8">
+          <div className="flex items-center">
+            <Link
+              to="/"
+              className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-14"
+              aria-label="Algo Realty home"
+            >
+              <BrandLogo variant="header" />
             </Link>
-            <Menu
-              label="Industries"
-              items={industries.map((i) => ({ to: i.to, label: i.label }))}
-            />
-            <Menu label="Integrations" items={integrationItems} />
-            <Menu label="Resources" items={resourceItems} />
-            <Link to="/pricing" className="transition hover:text-foreground">
-              Pricing
-            </Link>
-          </nav>
+            <nav
+              aria-label="Primary"
+              className="hidden items-center gap-7 text-[13px] text-muted-foreground md:flex"
+            >
+              <Menu label="Solutions" items={solutionItems} />
+              <Link to="/ai-employees" className="transition hover:text-foreground">
+                AI Employees
+              </Link>
+              <Menu
+                label="Industries"
+                items={industries.map((i) => ({ to: i.to, label: i.label }))}
+              />
+              <Menu label="Integrations" items={integrationItems} />
+              <Menu label="Resources" items={resourceItems} />
+              <Link to="/pricing" className="transition hover:text-foreground">
+                Pricing
+              </Link>
+            </nav>
+          </div>
           <a
             href={CALENDLY_URL}
             target="_blank"
@@ -179,10 +185,10 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-6 py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_2fr]">
           <div>
-            <div className="flex items-center">
+            <div className="mt-4 mb-8 flex items-center">
               <BrandLogo variant="footer" />
             </div>
-            <p className="mt-5 max-w-sm text-sm text-muted-foreground">
+            <p className="max-w-sm text-sm text-muted-foreground">
               AI Workforce for Real Estate. A product by AlgoBridge — deployed across leading
               developers, brokerages and enterprises worldwide.
             </p>

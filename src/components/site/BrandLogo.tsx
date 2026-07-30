@@ -7,10 +7,11 @@ type BrandLogoProps = {
 };
 
 export function BrandLogo({ variant = "header", className }: BrandLogoProps) {
-  const heightClass =
+  // Sized to match Algo Auto's visual weight: mobile / tablet (md:) / desktop (lg:).
+  const sizeClass =
     variant === "footer"
-      ? "h-[56px] sm:h-[60px] md:h-[64px]"
-      : "h-[34px] sm:h-[38px] md:h-[42px] lg:h-[44px]";
+      ? "h-[72px] max-w-[300px] md:h-[110px] md:max-w-[520px]"
+      : "h-[38px] max-w-[180px] md:h-[46px] md:max-w-[220px] lg:h-[52px] lg:max-w-[260px]";
 
   return (
     <img
@@ -20,7 +21,7 @@ export function BrandLogo({ variant = "header", className }: BrandLogoProps) {
       height={353}
       decoding="async"
       loading="eager"
-      className={cn("w-auto shrink-0 select-none object-contain", heightClass, className)}
+      className={cn("w-auto shrink-0 select-none object-contain", sizeClass, className)}
     />
   );
 }
