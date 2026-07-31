@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, Menu as MenuIcon, Phone, X } from "lucide-react";
+import { ArrowRight, Calendar, Mail, Menu as MenuIcon, Phone, X } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import { integrations } from "@/data/integrations";
 import { resources } from "@/data/resources";
 import { BrandLogo } from "@/components/site/BrandLogo";
 import {
   CALENDLY_URL,
+  CONTACT_EMAIL,
   CTA_BOOK_COMPACT,
   CTA_BOOK_SHORT,
   PHONE_DISPLAY,
@@ -328,6 +329,13 @@ export function Footer() {
                 {PHONE_DISPLAY}
               </a>
               <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="flex items-center gap-2 text-foreground/80 transition hover:text-foreground"
+              >
+                <Mail className="h-3.5 w-3.5 text-emerald" />
+                {CONTACT_EMAIL}
+              </a>
+              <a
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -336,6 +344,13 @@ export function Footer() {
                 <Calendar className="h-3.5 w-3.5 text-emerald" />
                 {CTA_BOOK_COMPACT}
               </a>
+            </div>
+            <div className="mt-4 max-w-sm text-xs leading-relaxed text-muted-foreground">
+              Sri Saamba Parmeshwara Industries Private Limited
+              <br />
+              Sierra Cartel 1207/343, 9th Main Rd, Sector-7,
+              <br />
+              HSR Layout, Bangalore South, Bangalore- 560102, Karnataka
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
