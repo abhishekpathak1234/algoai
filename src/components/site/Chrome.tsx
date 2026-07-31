@@ -55,7 +55,9 @@ const industries = [
 function Menu({ label, items }: { label: string; items: { to: string; label: string }[] }) {
   return (
     <div className="group relative">
-      <button className="flex items-center gap-1 transition hover:text-foreground">{label}</button>
+      <button className="flex cursor-pointer items-center gap-1 transition hover:text-foreground">
+        {label}
+      </button>
       <div className="invisible absolute left-1/2 top-full z-[70] mt-3 w-72 -translate-x-1/2 opacity-0 transition group-hover:visible group-hover:opacity-100">
         <div className="max-h-[70vh] overflow-y-auto rounded-xl border border-border bg-card/95 shadow-[var(--shadow-elev)] backdrop-blur-xl p-2">
           {items.map((i) => (
@@ -76,7 +78,9 @@ function Menu({ label, items }: { label: string; items: { to: string; label: str
 function ProductsMenu() {
   return (
     <div className="group relative">
-      <button className="flex items-center gap-1 transition hover:text-foreground">Products</button>
+      <button className="flex cursor-pointer items-center gap-1 transition hover:text-foreground">
+        Products
+      </button>
       <div className="invisible absolute left-1/2 top-full z-[70] mt-3 w-72 -translate-x-1/2 opacity-0 transition group-hover:visible group-hover:opacity-100">
         <div className="rounded-xl border border-border bg-card/95 p-2 shadow-[var(--shadow-elev)] backdrop-blur-xl">
           {siblingProducts.map((p) => {
@@ -90,27 +94,26 @@ function ProductsMenu() {
                   className="h-10 w-10 shrink-0 rounded-full object-cover"
                 />
                 <span className="min-w-0 flex-1">
-                  <span className="block text-[13px] font-medium text-foreground">
-                    {p.self ? `✓ ${p.label}` : p.label}
+                  <span className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
+                    {p.self && (
+                      <span
+                        aria-hidden
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60"
+                      />
+                    )}
+                    {p.label}
                   </span>
                   <span className="mt-0.5 block text-[11.5px] text-muted-foreground">{p.sub}</span>
                 </span>
               </>
             );
+            const rowClass = `flex cursor-pointer items-center gap-4 rounded-lg px-2 py-2.5 transition hover:bg-surface${p.self ? " bg-surface/60" : ""}`;
             return p.self ? (
-              <Link
-                key={p.key}
-                to={p.href}
-                className="flex items-center gap-4 rounded-lg px-2 py-2.5 transition hover:bg-surface"
-              >
+              <Link key={p.key} to={p.href} className={rowClass}>
                 {row}
               </Link>
             ) : (
-              <a
-                key={p.key}
-                href={p.href}
-                className="flex items-center gap-4 rounded-lg px-2 py-2.5 transition hover:bg-surface"
-              >
+              <a key={p.key} href={p.href} className={rowClass}>
                 {row}
               </a>
             );
@@ -188,7 +191,7 @@ export function Nav() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
-            className="grid h-9 w-9 place-items-center rounded-full border border-border text-foreground/85 transition hover:bg-surface md:hidden"
+            className="grid h-9 w-9 cursor-pointer place-items-center rounded-full border border-border text-foreground/85 transition hover:bg-surface md:hidden"
           >
             {mobileOpen ? <X className="h-4 w-4" /> : <MenuIcon className="h-4 w-4" />}
           </button>
@@ -222,19 +225,24 @@ export function Nav() {
                       height={40}
                       className="h-10 w-10 shrink-0 rounded-full object-cover"
                     />
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-[14px] text-foreground/85">
-                        {p.self ? `✓ ${p.label}` : p.label}
-                      </span>
+                    <span className="flex min-w-0 flex-1 items-center gap-1.5 text-[14px] text-foreground/85">
+                      {p.self && (
+                        <span
+                          aria-hidden
+                          className="h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60"
+                        />
+                      )}
+                      {p.label}
                     </span>
                   </>
                 );
+                const rowClass = `flex cursor-pointer items-center gap-4 rounded-lg px-3 py-2.5 transition hover:bg-surface${p.self ? " bg-surface/60" : ""}`;
                 return p.self ? (
                   <Link
                     key={p.key}
                     to={p.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-4 rounded-lg px-3 py-2.5 transition hover:bg-surface"
+                    className={rowClass}
                   >
                     {row}
                   </Link>
@@ -243,7 +251,7 @@ export function Nav() {
                     key={p.key}
                     href={p.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-4 rounded-lg px-3 py-2.5 transition hover:bg-surface"
+                    className={rowClass}
                   >
                     {row}
                   </a>
@@ -367,33 +375,43 @@ export function Footer() {
               <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
                 Products
               </div>
-              <ul className="mt-4 space-y-2.5 text-sm">
-                {siblingProducts.map((p) => (
-                  <li key={p.key} className="flex items-center gap-3">
-                    <img
-                      src={p.icon}
-                      alt={p.label}
-                      width={24}
-                      height={24}
-                      className="h-5 w-5 shrink-0 rounded-full object-cover md:h-6 md:w-6"
-                    />
-                    {p.self ? (
-                      <Link
-                        to={p.href}
-                        className="text-foreground transition hover:text-foreground"
-                      >
-                        ✓ Algo Realty
-                      </Link>
-                    ) : (
-                      <a
-                        href={p.href}
-                        className="text-foreground/80 transition hover:text-foreground"
-                      >
+              <ul className="mt-4 space-y-1 text-sm">
+                {siblingProducts.map((p) => {
+                  const row = (
+                    <>
+                      <img
+                        src={p.icon}
+                        alt={p.label}
+                        width={24}
+                        height={24}
+                        className="h-5 w-5 shrink-0 rounded-full object-cover md:h-6 md:w-6"
+                      />
+                      <span className="flex items-center gap-1.5">
+                        {p.self && (
+                          <span
+                            aria-hidden
+                            className="h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/60"
+                          />
+                        )}
                         {p.label.replace(" AI", "")}
-                      </a>
-                    )}
-                  </li>
-                ))}
+                      </span>
+                    </>
+                  );
+                  const rowClass = `-ml-1.5 flex cursor-pointer items-center gap-2.5 rounded-lg px-1.5 py-1 transition hover:bg-surface${p.self ? " bg-surface/60 text-foreground" : " text-foreground/80 hover:text-foreground"}`;
+                  return (
+                    <li key={p.key}>
+                      {p.self ? (
+                        <Link to={p.href} className={rowClass}>
+                          {row}
+                        </Link>
+                      ) : (
+                        <a href={p.href} className={rowClass}>
+                          {row}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
