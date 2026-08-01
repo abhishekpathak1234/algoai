@@ -176,6 +176,9 @@ export function Nav() {
                 Pricing
               </Link>
               <ProductsMenu />
+              <a href="https://algobridge.cc/partner" className="transition hover:text-foreground">
+                Partner
+              </a>
             </nav>
           </div>
           <a
@@ -260,6 +263,13 @@ export function Nav() {
               })}
             </div>
             <a
+              href="https://algobridge.cc/partner"
+              onClick={() => setMobileOpen(false)}
+              className="block rounded-lg px-3 py-3 text-foreground/85 transition hover:bg-surface hover:text-foreground"
+            >
+              Partner
+            </a>
+            <a
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -304,6 +314,7 @@ export function Footer() {
         { label: "Pricing", to: "/pricing" },
         { label: "Security", to: "/security" },
         { label: "Contact", to: "/contact" },
+        { label: "Partner", to: "https://algobridge.cc/partner" },
         { label: CTA_BOOK_COMPACT, to: CALENDLY_URL },
       ],
     },
@@ -365,8 +376,9 @@ export function Footer() {
                       <li key={x.label}>
                         <a
                           href={x.to}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          {...(x.to.includes("algobridge.cc/partner")
+                            ? {}
+                            : { target: "_blank", rel: "noopener noreferrer" })}
                           className="text-foreground/80 transition hover:text-foreground"
                         >
                           {x.label}

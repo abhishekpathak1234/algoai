@@ -3,7 +3,7 @@
 // link, phone number, WhatsApp message, and CTA copy stay consistent
 // everywhere — update once here, it updates on every page.
 
-const CALENDLY_BASE_URL = "https://calendly.com/abhishek-algobridge/30min";
+const CALENDLY_BASE_URL = "https://calendly.com/business-srisaamba/30min";
 
 // Every Calendly CTA must carry these so bookings are attributable back to
 // the website. Baked into the single exported URL so no call site can forget it.
