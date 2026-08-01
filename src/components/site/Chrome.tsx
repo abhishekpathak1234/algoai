@@ -92,7 +92,7 @@ function ProductsMenu() {
                   alt={p.label}
                   width={40}
                   height={40}
-                  className="h-10 w-10 shrink-0 rounded-full object-cover"
+                  className="h-10 w-10 shrink-0 rounded-full object-contain"
                 />
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-1.5 text-[13px] font-medium text-foreground">
@@ -224,7 +224,7 @@ export function Nav() {
                       alt={p.label}
                       width={40}
                       height={40}
-                      className="h-10 w-10 shrink-0 rounded-full object-cover"
+                      className="h-10 w-10 shrink-0 rounded-full object-contain"
                     />
                     <span className="flex min-w-0 flex-1 items-center gap-1.5 text-[14px] text-foreground/85">
                       {p.self && (
@@ -399,7 +399,7 @@ export function Footer() {
                         alt={p.label}
                         width={24}
                         height={24}
-                        className="h-5 w-5 shrink-0 rounded-full object-cover md:h-6 md:w-6"
+                        className="h-6 w-6 shrink-0 rounded-full object-contain"
                       />
                       <span className="flex items-center gap-1.5">
                         {p.self && (
