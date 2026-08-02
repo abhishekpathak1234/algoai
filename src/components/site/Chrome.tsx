@@ -153,6 +153,7 @@ export function Nav() {
           <div className="flex items-center">
             <Link
               to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="mr-6 flex h-[38px] items-center md:h-[46px] lg:mr-14 lg:h-[90px]"
               aria-label="Algo Realty home"
             >
@@ -325,7 +326,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_2fr]">
           <div>
             <div className="mt-4 mb-8 flex items-center">
-              <Link to="/" aria-label="Algo Realty home" className="flex items-center">
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                aria-label="Algo Realty home"
+                className="flex items-center"
+              >
                 <BrandLogo variant="footer" />
               </Link>
             </div>
