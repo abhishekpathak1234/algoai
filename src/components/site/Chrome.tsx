@@ -325,7 +325,9 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_2fr]">
           <div>
             <div className="mt-4 mb-8 flex items-center">
-              <BrandLogo variant="footer" />
+              <Link to="/" aria-label="Algo Realty home" className="flex items-center">
+                <BrandLogo variant="footer" />
+              </Link>
             </div>
             <p className="max-w-sm text-sm text-muted-foreground">
               AI Workforce for Real Estate. A product by AlgoBridge — deployed across leading
