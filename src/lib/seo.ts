@@ -41,6 +41,9 @@ export function buildMeta(opts: {
   ];
   if (image) {
     meta.push({ property: "og:image", content: image });
+    meta.push({ property: "og:image:width", content: "1200" });
+    meta.push({ property: "og:image:height", content: "630" });
+    meta.push({ property: "og:image:alt", content: title });
     meta.push({ name: "twitter:image", content: image });
   }
   return { meta, links: [{ rel: "canonical", href: url }] };

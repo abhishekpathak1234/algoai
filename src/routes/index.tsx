@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer } from "@/components/site/Chrome";
-import { buildMeta, faqLd, softwareLd } from "@/lib/seo";
+import { absoluteUrl, buildMeta, faqLd, softwareLd } from "@/lib/seo";
 import { PageBackdrop } from "@/components/home/primitives";
 import { Hero } from "@/components/home/Hero";
 import { Trust } from "@/components/home/Trust";
@@ -58,6 +58,7 @@ export const Route = createFileRoute("/")({
       description:
         "Deploy AI Employees across sales, telecalling, CRM, marketing, support, collections and operations. Increase revenue, reduce lead leakage and scale without adding headcount.",
       path: "/",
+      image: absoluteUrl("/images/og-image.png"),
     }),
     scripts: [
       softwareLd(
