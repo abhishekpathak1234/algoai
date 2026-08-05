@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
     ...buildMeta({
       title: "Algo Realty — AI Workforce for Real Estate",
       description:
-        "Deploy AI Employees across sales, telecalling, CRM, marketing, support, collections and operations. Increase revenue, reduce lead leakage and scale without adding headcount.",
+        "Deploy AI Employees across sales, telecalling, CRM, marketing, support, collections and operations. Increase revenue and scale without adding headcount.",
       path: "/",
       image: absoluteUrl("/images/og-image.png"),
     }),
