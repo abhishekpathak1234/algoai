@@ -19,7 +19,7 @@ export const Route = createFileRoute("/industries")({
       {
         name: "description",
         content:
-          "AI Workforce tailored for every real estate business — builders, developers, brokerages, agencies, property management, commercial, luxury and channel partners.",
+          "AI Workforce tailored for every real estate business — builders, developers, brokerages, agencies, property management and luxury.",
       },
       { property: "og:title", content: "Industries — Algo Realty" },
       {
