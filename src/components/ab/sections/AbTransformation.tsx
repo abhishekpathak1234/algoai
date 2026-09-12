@@ -106,7 +106,9 @@ export function AbTransformation() {
         <Reveal delay={120}>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a
-              href="#contact"
+              href="https://calendly.com/abhishek-algobridge/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3.5 text-[0.9rem] font-medium text-ink-foreground transition-opacity hover:opacity-90"
             >
               Transform a Workflow

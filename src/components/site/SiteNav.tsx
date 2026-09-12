@@ -102,7 +102,7 @@ const menus: MenuDef[] = [
     footer: {
       text: "Start with one workflow. Prove the value. Scale across the business.",
       ctaLabel: "Transform a Workflow",
-      href: "/#contact",
+      href: "https://calendly.com/abhishek-algobridge/30min",
     },
   },
   {
@@ -165,7 +165,7 @@ const menus: MenuDef[] = [
     footer: {
       text: "Bring the workflow that costs your operation the most.",
       ctaLabel: "Transform a Workflow",
-      href: "/#contact",
+      href: "https://calendly.com/abhishek-algobridge/30min",
     },
   },
   {
@@ -259,7 +259,7 @@ const menus: MenuDef[] = [
     footer: {
       text: "Bring the workflow that costs your operation the most.",
       ctaLabel: "Transform a Workflow",
-      href: "/#contact",
+      href: "https://calendly.com/abhishek-algobridge/30min",
     },
   },
   {
@@ -271,31 +271,17 @@ const menus: MenuDef[] = [
     columns: 2,
     items: [
       {
-        label: "Portfolio",
-        desc: "Enterprise workflow engagements, NDA-safe.",
+        label: "Portfolio & Case Studies",
+        desc: "Enterprise workflow engagements — problem, architecture and measured outcome per workflow, NDA-safe.",
         href: "/portfolio",
         icon: Layers,
         group: "Proof",
       },
       {
-        label: "Case Studies",
-        desc: "Problem, architecture and measured outcome per workflow.",
-        href: "/portfolio",
-        icon: Workflow,
-        group: "Proof",
-      },
-      {
-        label: "Industry Research",
-        desc: "Enterprise workflow intelligence research and perspectives.",
+        label: "Industry Research & Insights",
+        desc: "Enterprise workflow intelligence research, perspectives and strategic thinking on governed execution.",
         href: "/research",
         icon: BookOpen,
-        group: "Research",
-      },
-      {
-        label: "Insights",
-        desc: "Strategic thinking on intelligence, flow and governed execution.",
-        href: "/research",
-        icon: Sparkles,
         group: "Research",
       },
       {
@@ -338,7 +324,7 @@ const menus: MenuDef[] = [
     footer: {
       text: "Tell us the workflow and we'll map the architecture behind it.",
       ctaLabel: "Talk to AlgoBridge",
-      href: "/#contact",
+      href: "https://calendly.com/abhishek-algobridge/30min",
     },
   },
   {
@@ -366,7 +352,7 @@ const menus: MenuDef[] = [
       {
         label: "Contact",
         desc: "Talk to an AlgoBridge expert about one workflow.",
-        href: "/#contact",
+        href: "https://calendly.com/abhishek-algobridge/30min",
         icon: Mail,
         group: "Partner",
       },
@@ -375,16 +361,20 @@ const menus: MenuDef[] = [
     footer: {
       text: "Start with one workflow. Prove the value. Scale.",
       ctaLabel: "Transform a Workflow",
-      href: "/#contact",
+      href: "https://calendly.com/abhishek-algobridge/30min",
     },
   },
 ];
+
+const externalLinkProps = (href: string) =>
+  href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
 function ItemLink({ it, onNavigate }: { it: Item; onNavigate: () => void }) {
   return (
     <a
       href={it.href}
       onClick={onNavigate}
+      {...externalLinkProps(it.href)}
       className="group flex items-start gap-3 rounded-xl border border-transparent p-3 transition-colors hover:border-hairline hover:bg-surface-2"
     >
       <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-hairline bg-background">
@@ -475,6 +465,7 @@ function Panel({ menu, onNavigate }: { menu: MenuDef; onNavigate: () => void }) 
           <a
             href={menu.footer.href}
             onClick={onNavigate}
+            {...externalLinkProps(menu.footer.href)}
             className="group inline-flex items-center gap-1.5 text-[0.8rem] font-medium text-accent"
           >
             {menu.footer.ctaLabel}
@@ -524,7 +515,7 @@ export function SiteNav() {
       }`}
     >
       <nav className="mx-auto flex h-[72px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8">
-        <a href="#top" aria-label="AlgoBridge AI home">
+        <a href="/" aria-label="AlgoBridge AI home">
           <Logo />
         </a>
 
@@ -582,7 +573,9 @@ export function SiteNav() {
             Explore the Platform
           </a>
           <a
-            href="#contact"
+            href="https://calendly.com/abhishek-algobridge/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-[0.85rem] font-medium whitespace-nowrap text-ink-foreground transition-opacity hover:opacity-90"
           >
             Transform a Workflow
@@ -634,6 +627,7 @@ export function SiteNav() {
                                 <a
                                   href={it.href}
                                   onClick={() => setOpen(false)}
+                                  {...externalLinkProps(it.href)}
                                   className="flex items-start gap-3 rounded-lg px-2 py-2.5 hover:bg-surface-2"
                                 >
                                   <it.icon className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
@@ -676,7 +670,9 @@ export function SiteNav() {
             })}
           </ul>
           <a
-            href="#contact"
+            href="https://calendly.com/abhishek-algobridge/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="block rounded-full bg-ink px-4 py-3 text-center text-sm font-medium text-ink-foreground"
           >

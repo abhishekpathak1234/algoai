@@ -64,7 +64,9 @@ export function AbClosing() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#contact"
+                href="https://calendly.com/abhishek-algobridge/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-[0.9rem] font-medium"
                 style={{ background: "var(--gradient-accent)", color: "var(--accent-foreground)" }}
               >

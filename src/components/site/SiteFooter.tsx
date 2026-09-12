@@ -22,8 +22,7 @@ const footerCols = [
       { label: "AlgoBridge Flow Architecture™", href: "/#flow-architecture" },
       { label: "AlgoBridge Workforce™", href: "/#workforce" },
       { label: "Enterprise Architecture", href: "/#architecture" },
-      { label: "Governance", href: "/#systems" },
-      { label: "Integrations", href: "/#systems" },
+      { label: "Governance & Integrations", href: "/#systems" },
     ],
   },
   {
@@ -40,13 +39,11 @@ const footerCols = [
   {
     title: "Resources",
     links: [
-      { label: "Portfolio", href: "/portfolio" },
-      { label: "Case Studies", href: "/portfolio" },
-      { label: "Industry Research", href: "/research" },
+      { label: "Portfolio & Case Studies", href: "/portfolio" },
+      { label: "Industry Research & Insights", href: "/research" },
       { label: "Workflow Library", href: "/#library" },
       { label: "Architecture", href: "/#architecture" },
       { label: "Economic Value Model", href: "/#value" },
-      { label: "Insights", href: "/research" },
     ],
   },
   {
@@ -55,7 +52,7 @@ const footerCols = [
       { label: "Why AlgoBridge", href: "/#why" },
       { label: "Our Approach", href: "/#transformation" },
       { label: "Partners", href: "/#contact" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Contact", href: "https://calendly.com/abhishek-algobridge/30min" },
     ],
   },
 ];
@@ -66,12 +63,16 @@ export function SiteFooter() {
       <div className="mx-auto w-full max-w-[1280px] px-5 py-16 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_3.2fr]">
           <div>
-            <Logo showTagline />
+            <a href="/" aria-label="AlgoBridge AI home">
+              <Logo showTagline />
+            </a>
             <p className="mt-6 max-w-xs text-[0.9rem] leading-relaxed text-muted-foreground">
               Enterprise AI intelligence &amp; orchestration for complex business operations.
             </p>
             <a
-              href="/#contact"
+              href="https://calendly.com/abhishek-algobridge/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-6 inline-flex items-center gap-1.5 text-[0.85rem] font-medium text-accent"
             >
               Transform a Workflow
@@ -89,6 +90,9 @@ export function SiteFooter() {
                     <li key={l.label}>
                       <a
                         href={l.href}
+                        {...(l.href.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
                         className="text-[0.88rem] text-muted-foreground transition-colors hover:text-accent"
                       >
                         {l.label}
@@ -106,6 +110,20 @@ export function SiteFooter() {
             © {new Date().getFullYear()} AlgoBridge.ai — Enterprise AI intelligence &amp;
             orchestration.
           </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="/productionbackup/privacy.html"
+              className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground transition-colors hover:text-accent"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/productionbackup/terms.html"
+              className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground transition-colors hover:text-accent"
+            >
+              Terms of Service
+            </a>
+          </div>
           <p className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground">
             Illustrative demonstrations · no live customer data
           </p>

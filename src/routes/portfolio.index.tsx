@@ -84,7 +84,9 @@ function PortfolioPage() {
                 Explore Industries
               </a>
               <a
-                href="/#contact"
+                href="https://calendly.com/abhishek-algobridge/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full bg-ink px-4 py-2.5 text-[0.85rem] font-medium text-ink-foreground"
               >
                 Transform a Workflow

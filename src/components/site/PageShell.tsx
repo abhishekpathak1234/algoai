@@ -80,7 +80,10 @@ export function PageCta({
   eyebrow,
   title,
   sub,
-  primary = { label: "Transform a Workflow", href: "/#contact" },
+  primary = {
+    label: "Transform a Workflow",
+    href: "https://calendly.com/abhishek-algobridge/30min",
+  },
   secondary,
 }: {
   eyebrow: string;
@@ -100,6 +103,9 @@ export function PageCta({
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href={primary.href}
+            {...(primary.href.startsWith("http")
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
             className="group inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-[0.9rem] font-medium"
             style={{ background: "var(--gradient-accent)", color: "var(--accent-foreground)" }}
           >
