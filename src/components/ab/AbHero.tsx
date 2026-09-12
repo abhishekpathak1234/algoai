@@ -14,14 +14,16 @@ export function AbHero() {
           <div>
             <Reveal>
               <p className="eyebrow">Enterprise AI Intelligence & Orchestration</p>
-              <h1 className="mt-5 text-[clamp(2.4rem,5.6vw,4.1rem)] leading-[0.98] font-semibold">
+              <h1 className="mt-5 text-[clamp(2.2rem,5vw,3.7rem)] leading-[0.98] font-semibold">
                 Turn complex business workflows into{" "}
                 <span className="text-gradient-accent">intelligent operations.</span>
               </h1>
               <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-muted-foreground">
-                AlgoBridge connects the systems, data, intelligence and workforce already inside
-                your enterprise to transform fragmented workflows into intelligent, governed and
-                measurable operations.
+                We help enterprises automate repetitive customer and operational workflows.
+              </p>
+              <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-muted-foreground">
+                Our AI-powered orchestration helps reduce costs and increase operational
+                efficiency without replacing the systems and processes you already use.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
