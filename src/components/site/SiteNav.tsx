@@ -351,8 +351,8 @@ const menus: MenuDef[] = [
 
       {
         label: "Contact",
-        desc: "Talk to an AlgoBridge expert about one workflow.",
-        href: "https://calendly.com/abhishek-algobridge/30min",
+        desc: "Reach AlgoBridge — book a call or email us directly.",
+        href: "/contact",
         icon: Mail,
         group: "Partner",
       },

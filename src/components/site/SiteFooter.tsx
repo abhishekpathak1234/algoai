@@ -51,8 +51,8 @@ const footerCols = [
     links: [
       { label: "Why AlgoBridge", href: "/#why" },
       { label: "Our Approach", href: "/#transformation" },
-      { label: "Partners", href: "/#contact" },
-      { label: "Contact", href: "https://calendly.com/abhishek-algobridge/30min" },
+      { label: "Partners", href: "/contact" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ];
@@ -112,16 +112,16 @@ export function SiteFooter() {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="/productionbackup/privacy.html"
+              href="/privacy"
               className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground transition-colors hover:text-accent"
             >
               Privacy Policy
             </a>
             <a
-              href="/productionbackup/terms.html"
+              href="/terms"
               className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground transition-colors hover:text-accent"
             >
-              Terms of Service
+              Terms of Use
             </a>
           </div>
           <p className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground">
