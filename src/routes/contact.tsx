@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
 import { Reveal, Section } from "@/components/site/primitives";
 
-const title = "Contact AlgoBridge — Book a 30-Minute Conversation";
+const title = "Contact AlgoBridge AI — Enterprise AI Intelligence & Orchestration";
 const description =
-  "Talk to AlgoBridge about the workflow that costs your operation the most. Book a 30-minute conversation or reach us directly by email.";
+  "Talk with AlgoBridge about transforming a complex business workflow with enterprise AI intelligence, orchestration and governed execution.";
 
 const CALENDLY_URL = "https://calendly.com/abhishek-algobridge/30min";
 const EMAIL = "abhishek@algobridge.cc";
@@ -77,22 +77,56 @@ function ContactPage() {
             </div>
           </Reveal>
 
-          <Reveal delay={80}>
-            <div className="surface-card flex h-full flex-col p-6 sm:p-8">
-              <p className="eyebrow">Prefer email</p>
-              <h2 className="mt-4 text-[1.2rem] leading-tight font-semibold">Write to us directly</h2>
-              <p className="mt-3 text-[0.9rem] leading-relaxed text-muted-foreground">
-                For anything that doesn't fit a 30-minute slot, email us and we'll get back to you.
-              </p>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="mt-6 inline-flex items-center gap-2.5 rounded-xl border border-hairline bg-surface-2 px-4 py-3 text-[0.92rem] font-medium transition-colors hover:border-accent"
-              >
-                <Mail className="h-4 w-4 text-accent" />
-                {EMAIL}
-              </a>
-            </div>
-          </Reveal>
+          <div className="grid gap-4">
+            <Reveal delay={80}>
+              <div className="surface-card flex h-full flex-col p-6 sm:p-8">
+                <p className="eyebrow">Prefer email</p>
+                <h2 className="mt-4 text-[1.2rem] leading-tight font-semibold">
+                  Write to us directly
+                </h2>
+                <p className="mt-3 text-[0.9rem] leading-relaxed text-muted-foreground">
+                  For anything that doesn't fit a 30-minute slot, email us and we'll get back to
+                  you.
+                </p>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="mt-6 inline-flex items-center gap-2.5 rounded-xl border border-hairline bg-surface-2 px-4 py-3 text-[0.92rem] font-medium transition-colors hover:border-accent"
+                >
+                  <Mail className="h-4 w-4 text-accent" />
+                  {EMAIL}
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <div className="surface-card flex h-full flex-col p-6 sm:p-8">
+                <p className="eyebrow">Registered office</p>
+                <h2 className="mt-4 text-[1.2rem] leading-tight font-semibold">
+                  Company information
+                </h2>
+                <div className="mt-4 flex items-start gap-2.5 text-[0.9rem] leading-relaxed text-muted-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                  <div>
+                    <p className="font-medium text-foreground">
+                      SRI SAAMBA PARMESHWARA INDUSTRIES PRIVATE LIMITED
+                    </p>
+                    <p className="mt-1.5">
+                      SIERRA CARTEL 1207/343,
+                      <br />
+                      9th Main Rd, Sector-7, HSR Layout,
+                      <br />
+                      Bangalore South, Bengaluru – 560102,
+                      <br />
+                      Karnataka, India
+                    </p>
+                    <p className="mt-2.5 font-mono text-[0.78rem] tracking-[0.02em]">
+                      GSTIN: 29ABOCS2320P1ZQ
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </Section>
     </PageShell>

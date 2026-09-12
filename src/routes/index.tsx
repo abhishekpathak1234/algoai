@@ -15,9 +15,9 @@ import { AbTransformation } from "@/components/ab/sections/AbTransformation";
 import { AbResearch } from "@/components/ab/sections/AbResearch";
 import { AbClosing } from "@/components/ab/sections/AbClosing";
 
-const title = "AlgoBridge AI — AI workflow & workforce intelligence for enterprise operations";
+const title = "AlgoBridge AI — Enterprise AI Intelligence & Orchestration";
 const description =
-  "AlgoBridge AI connects business systems, operational data and AI workforce units into governed workflows that execute real work across commerce, automotive, logistics and real estate operations.";
+  "Enterprise AI intelligence and orchestration for complex business operations. AlgoBridge connects systems, data, intelligence and workforce to transform fragmented workflows into intelligent, governed and measurable operations.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

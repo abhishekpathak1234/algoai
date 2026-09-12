@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/auto", "destination": "/auto/", "permanent": false },
     { "source": "/easy-ai", "destination": "/easyai", "permanent": false },
     { "source": "/easy-ai/:path*", "destination": "/easyai/:path*", "permanent": false }
