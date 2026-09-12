@@ -14,7 +14,7 @@ export function AbHero() {
           <div className="lg:-mt-10">
             <Reveal>
               <p className="eyebrow">Enterprise AI Intelligence & Orchestration</p>
-              <h1 className="mt-5 text-[clamp(1.75rem,4vw,2.9rem)] leading-[0.98] font-semibold">
+              <h1 className="mt-5 text-[2rem] leading-[0.98] font-semibold sm:text-[clamp(1.75rem,4vw,2.9rem)]">
                 Turn complex business workflows into{" "}
                 <span className="text-gradient-accent">intelligent operations.</span>
               </h1>
