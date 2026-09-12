@@ -17,6 +17,7 @@ import {
   Users,
   Mail,
   Sparkles,
+  User,
 } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 
@@ -346,6 +347,13 @@ const menus: MenuDef[] = [
         desc: "Discover, prototype, deploy, measure, then scale.",
         href: "/#transformation",
         icon: RouteIcon,
+        group: "About",
+      },
+      {
+        label: "Founder",
+        desc: "Abhishek Pathak — Founder & CEO, AlgoBridge Ai.",
+        href: "/about#founder",
+        icon: User,
         group: "About",
       },
 
