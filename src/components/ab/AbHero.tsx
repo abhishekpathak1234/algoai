@@ -10,20 +10,18 @@ export function AbHero() {
         style={{ background: "var(--gradient-accent)" }}
       />
       <div className="relative mx-auto w-full max-w-[1280px] px-5 pt-14 pb-6 sm:px-8 md:pt-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="lg:-mt-10">
             <Reveal>
               <p className="eyebrow">Enterprise AI Intelligence & Orchestration</p>
-              <h1 className="mt-5 text-[clamp(2.2rem,5vw,3.7rem)] leading-[0.98] font-semibold">
+              <h1 className="mt-5 text-[clamp(1.75rem,4vw,2.9rem)] leading-[0.98] font-semibold">
                 Turn complex business workflows into{" "}
                 <span className="text-gradient-accent">intelligent operations.</span>
               </h1>
               <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-muted-foreground">
-                We help enterprises automate repetitive customer and operational workflows.
-              </p>
-              <p className="mt-4 max-w-xl text-[1.0625rem] leading-relaxed text-muted-foreground">
-                Our AI-powered orchestration helps reduce costs and increase operational
-                efficiency without replacing the systems and processes you already use.
+                We help enterprises automate repetitive customer and operational workflows. Our
+                AI-powered orchestration helps reduce costs and increase operational efficiency
+                without replacing the systems and processes you already use.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
