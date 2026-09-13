@@ -19,15 +19,27 @@ const title = "AlgoBridge AI — Enterprise AI Intelligence & Orchestration";
 const description =
   "Enterprise AI intelligence and orchestration for complex business operations. AlgoBridge connects systems, data, intelligence and workforce to transform fragmented workflows into intelligent, governed and measurable operations.";
 
+const ogTitle = "AlgoBridge AI — Enterprise AI Workflow Automation";
+const ogDescription =
+  "AI-powered orchestration that automates repetitive customer and operational workflows, reduces costs, and increases operational efficiency.";
+const ogImage = "https://algobridge.cc/og-image.png";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title },
       { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
+      { property: "og:title", content: ogTitle },
+      { property: "og:description", content: ogDescription },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://algobridge.cc/" },
+      { property: "og:image", content: ogImage },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: ogTitle },
+      { name: "twitter:description", content: ogDescription },
+      { name: "twitter:image", content: ogImage },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
