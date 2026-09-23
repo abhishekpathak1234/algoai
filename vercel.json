@@ -2,6 +2,7 @@
   "redirects": [
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/productionbackup", "destination": "/d2c", "permanent": true },
+    { "source": "/productionbackup/", "destination": "/d2c", "permanent": true },
     { "source": "/productionbackup/:path*", "destination": "/d2c", "permanent": true },
     { "source": "/auto", "destination": "/auto/", "permanent": false },
     { "source": "/easy-ai", "destination": "/easyai", "permanent": false },
