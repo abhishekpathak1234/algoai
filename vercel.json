@@ -1,11 +1,17 @@
 {
   "redirects": [
     { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/productionbackup", "destination": "/algoold", "permanent": true },
+    { "source": "/productionbackup/", "destination": "/algoold", "permanent": true },
+    { "source": "/productionbackup/:path*", "destination": "/algoold/:path*", "permanent": true },
     { "source": "/auto", "destination": "/auto/", "permanent": false },
     { "source": "/easy-ai", "destination": "/easyai", "permanent": false },
     { "source": "/easy-ai/:path*", "destination": "/easyai/:path*", "permanent": false }
   ],
   "rewrites": [
+    { "source": "/algoold", "destination": "/productionbackup" },
+    { "source": "/algoold/", "destination": "/productionbackup/" },
+    { "source": "/algoold/:path*", "destination": "/productionbackup/:path*" },
     { "source": "/partner/assets/:path*", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/assets/:path*" },
     { "source": "/partner/logo.png", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/logo.png" },
     { "source": "/partner", "destination": "https://algobridge-claude-code-2026-07-15.vercel.app/partner/" },
