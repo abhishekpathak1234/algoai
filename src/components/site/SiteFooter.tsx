@@ -124,9 +124,10 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-6">
-          <p className="font-mono text-[0.68rem] tracking-[0.1em] text-muted-foreground">
+          <p className="font-mono text-[0.68rem] leading-relaxed tracking-[0.1em] text-muted-foreground">
             © {new Date().getFullYear()} AlgoBridge.ai — Enterprise AI intelligence &amp;
-            orchestration.
+            orchestration. All trademarks and registrations belong to Sri Saamba Parmeshwara
+            Industries Pvt Ltd.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
