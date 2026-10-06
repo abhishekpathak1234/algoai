@@ -18,6 +18,10 @@ import {
   Mail,
   Sparkles,
   User,
+  Shield,
+  Plane,
+  Radio,
+  Zap,
 } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 
@@ -223,10 +227,38 @@ const menus: MenuDef[] = [
         group: "Industry perspectives",
       },
       {
-        label: "Healthcare",
+        label: "Insurance",
+        desc: "Perspective on claims, servicing and underwriting workflows.",
+        href: "/industries/insurance",
+        icon: Shield,
+        group: "Industry perspectives",
+      },
+      {
+        label: "Healthcare & Life Sciences",
         desc: "Perspective on coordination, records and back-office workflows.",
         href: "/industries/healthcare",
         icon: Sparkles,
+        group: "Industry perspectives",
+      },
+      {
+        label: "Aviation & Aerospace",
+        desc: "Perspective on maintenance, dispatch and recovery workflows.",
+        href: "/industries/aviation-aerospace",
+        icon: Plane,
+        group: "Industry perspectives",
+      },
+      {
+        label: "Telecommunications",
+        desc: "Perspective on fault triage, dispatch and service workflows.",
+        href: "/industries/telecommunications",
+        icon: Radio,
+        group: "Industry perspectives",
+      },
+      {
+        label: "Energy & Utilities",
+        desc: "Perspective on outage, dispatch and maintenance workflows.",
+        href: "/industries/energy-utilities",
+        icon: Zap,
         group: "Industry perspectives",
       },
       {
